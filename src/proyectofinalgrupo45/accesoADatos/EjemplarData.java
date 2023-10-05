@@ -53,5 +53,29 @@ public class EjemplarData {
 
         return ejemplar;
     }
+    public void eliminarEjemplar(int id){
+            
+            String sql = "UPDATE ejemplar SET estado = 0 WHERE idEjemplar = ?";
+            
+            
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            
+            ps.setInt(1,id);
+            
+            int exito = ps.executeUpdate();
+            
+            if (exito == 1 ){
+                
+               JOptionPane.showMessageDialog(null, "Ejemplar dado de baja");
+                
+                
+            }
+       
+        } catch (SQLException ex) {
+             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla ejemplar");
+        }
+            
+        }
 
 }

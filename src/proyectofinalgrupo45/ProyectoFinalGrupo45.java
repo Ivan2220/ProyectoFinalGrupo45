@@ -61,6 +61,7 @@ public class ProyectoFinalGrupo45 {
 //       }
 
 //p.devolverLibro(1, 1);
+ejemplar.eliminarEjemplar(5);
 
     }
 
