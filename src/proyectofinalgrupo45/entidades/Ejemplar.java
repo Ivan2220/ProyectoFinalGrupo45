@@ -4,22 +4,22 @@ package proyectofinalgrupo45.entidades;
 
 public class Ejemplar {
     private int idEjemplar;
-    private Lector lector;
+    private Libros libro;
     private int cantidad;
     private boolean estado;
 
     public Ejemplar() {
     }
 
-    public Ejemplar(int idEjemplar, Lector lector, int cantidad, boolean estado) {
+    public Ejemplar(int idEjemplar, Libros libro, int cantidad, boolean estado) {
         this.idEjemplar = idEjemplar;
-        this.lector = lector;
+        this.libro = libro;
         this.cantidad = cantidad;
         this.estado = estado;
     }
 
-    public Ejemplar(Lector lector, int cantidad, boolean estado) {
-        this.lector = lector;
+    public Ejemplar(Libros libro, int cantidad, boolean estado) {
+        this.libro = libro;
         this.cantidad = cantidad;
         this.estado = estado;
     }
@@ -32,12 +32,12 @@ public class Ejemplar {
         this.idEjemplar = idEjemplar;
     }
 
-    public Lector getLector() {
-        return lector;
+    public Libros getLibro() {
+        return libro;
     }
 
-    public void setLector(Lector lector) {
-        this.lector = lector;
+    public void setLibro(Libros libro) {
+        this.libro = libro;
     }
 
     public int getCantidad() {
@@ -58,7 +58,8 @@ public class Ejemplar {
 
     @Override
     public String toString() {
-        return "Ejemplar{" + "idEjemplar=" + idEjemplar + ", lector=" + lector + ", cantidad=" + cantidad + '}';
+        return "Ejemplar{" + "idEjemplar=" + idEjemplar + ", libro=" + libro + ", cantidad=" + cantidad + '}';
     }
+
     
 }
