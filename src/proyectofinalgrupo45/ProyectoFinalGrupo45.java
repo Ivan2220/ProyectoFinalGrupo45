@@ -44,7 +44,7 @@ public class ProyectoFinalGrupo45 {
 //                System.out.println();
 //            }
         PrestamoData p = new PrestamoData();
-        LectorData lector = new LectorData();
+        LectorData lector1 = new LectorData();
         EjemplarData ejemplar = new EjemplarData();
 
        
@@ -60,10 +60,26 @@ public class ProyectoFinalGrupo45 {
 //        System.out.println("nombre "+ libroEncontrado.getNombre());
 //       }
 
-p.devolverLibro(8, 5);
-
+     //p.devolverLibro(8, 3);
+     
+     List<Lector> listaLectoresP = lector1.listarLectoresPrestamo();
+//
+//          
+           for (Lector lector : listaLectoresP ) {
+               
+              System.out.println("ID: " + lector.getIdLector());
+              System.out.println("DNI: " + lector.getDni());
+              System.out.println("Nombre: " + lector.getNombre());
+              System.out.println("Domicilio: " + lector.getDomicilio());
+              System.out.println("Telefono: " + lector.getTelefono());
+              System.out.println("Estado: " + lector.isEstado());
+              System.out.println();
+          }
+  
+    }
 
 
     }
 
-}
+
+
