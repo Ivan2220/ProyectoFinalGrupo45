@@ -138,43 +138,7 @@ public class LectorData {
       
       
       
-       public List<Lector> listarLectoresPrestamo(){
-            
-           
-             String sql = "SELECT l.idLector, l.nombre, l.domicilio, l.telefono "
-                + "FROM prestamo p "
-                + "JOIN lector l ON p.idLector = l.idLector "
-                + "WHERE p.estado = 1 AND l.estado = 1" ;
-            
-        ArrayList<Lector> lectores = new ArrayList<>();
-        
-        try {
-            PreparedStatement ps = con.prepareStatement(sql);
-           
-            ResultSet rs = ps.executeQuery();
-            
-            while(rs.next()){
-                
-              Lector lector = new Lector ();  
-              
-              lector.setIdLector(rs.getInt("idLector"));
-              lector.setDni(rs.getInt("dni"));
-              lector.setNombre(rs.getString("nombre"));
-              lector.setTelefono(rs.getInt("telefono"));
-              lector.setEstado(true);
-              
-              lectores.add(lector);
-              
-            }
-            ps.close();
-            
-        } catch (SQLException ex) {
-             JOptionPane.showMessageDialog(null, "Error al acceder a las tablas");
-        }
-        
-        return lectores;
-        }
-        
+       
 }
 
 
