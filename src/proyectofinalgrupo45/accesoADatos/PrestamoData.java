@@ -60,11 +60,11 @@ public class PrestamoData {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla prestamo: " + ex.getMessage());
         }
     }
-    
+
     public void devolverLibro(int idLector, int idEjemplar) {
 
         String sql = "DELETE FROM prestamo WHERE idLector = ? AND idEjemplar = ?";
-         String sql2 = "UPDATE ejemplar SET cantidad = cantidad + 1 WHERE idEjemplar = ?";
+        String sql2 = "UPDATE ejemplar SET cantidad = cantidad + 1 WHERE idEjemplar = ?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, idLector);
@@ -73,16 +73,17 @@ public class PrestamoData {
             int filasAfectadas = ps.executeUpdate();
 
             if (filasAfectadas == 1) {
+
+                PreparedStatement ps2 = con.prepareStatement(sql2);
+                ps2.setInt(1, idEjemplar);
+                ps2.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Prestamo eliminado correctamente");
             } else {
                 JOptionPane.showMessageDialog(null, "No se encontró una prestamo para eliminar");
             }
 
             ps.close();
-            PreparedStatement ps2 = con.prepareStatement(sql2);
-            ps2.setInt(1, p.getEjemplar().getIdEjemplar());
-            ps2.executeUpdate();
-            ps2.close();
+
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla prestamo: " + ex.getMessage());
         }

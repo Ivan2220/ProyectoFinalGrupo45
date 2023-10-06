@@ -37,7 +37,7 @@ public class EjemplarData {
                 int idL = rs.getInt("idLibro");
 
                 ejemplar.setLibro(l.buscarLibroId(idL));
-
+               
                 ejemplar.setCantidad(rs.getInt("cantidad"));
 
                 ejemplar.setEstado(true);

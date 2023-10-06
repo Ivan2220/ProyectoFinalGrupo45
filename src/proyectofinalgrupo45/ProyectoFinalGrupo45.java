@@ -60,8 +60,9 @@ public class ProyectoFinalGrupo45 {
 //        System.out.println("nombre "+ libroEncontrado.getNombre());
 //       }
 
-//p.devolverLibro(1, 1);
-ejemplar.eliminarEjemplar(5);
+p.devolverLibro(8, 5);
+
+
 
     }
 
