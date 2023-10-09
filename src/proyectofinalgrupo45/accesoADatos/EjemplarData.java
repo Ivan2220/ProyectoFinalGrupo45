@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 import proyectofinalgrupo45.entidades.Ejemplar;
 import proyectofinalgrupo45.entidades.Libros;
@@ -75,7 +76,69 @@ public class EjemplarData {
         } catch (SQLException ex) {
              JOptionPane.showMessageDialog(null, "Error al acceder a la tabla ejemplar");
         }
+                             
+    }
+    public void modificarEjemplar(Ejemplar ejemplar){
+        
+        
+        String sql = "UPDATE ejemplar SET idLibro= ?, Cantidad= ?,Estado = ? where idEjemplar=?";
+        
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
             
+            ps.setInt(1, ejemplar.getLibro().getIdLibro());
+            ps.setInt(2, ejemplar.getCantidad());
+            ps.setBoolean(3, ejemplar.isEstado()); 
+            ps.setInt(4, ejemplar.getIdEjemplar());
+            
+            
+            
+            int exito = ps.executeUpdate();
+            
+            if (exito==1) {
+                
+                JOptionPane.showMessageDialog(null, "Ejemplar Modificado");
+                
+            }
+            
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla ejemplar");
         }
+        
+    }
+    public void guardarEjemplar(Ejemplar ejemplar) {
 
-}
+        String sql = "INSERT INTO ejemplar (idLibro, cantidad, estado)"
+                + "VALUES(?, ?, ?)";
+
+        
+           try {
+               PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+                ps.setInt(1, ejemplar.getLibro().getIdLibro());
+                ps.setInt(2, ejemplar.getCantidad());
+                ps.setBoolean(3, ejemplar.isEstado());
+                ps.executeUpdate();
+                
+                
+                ResultSet rs = ps.getGeneratedKeys();
+                
+                if (rs.next()) {
+                    
+                    ejemplar.setIdEjemplar(rs.getInt(1));
+                    JOptionPane.showMessageDialog(null, "Ejemplar Guardado");
+                    
+               
+            }
+                ps.close();
+            
+
+        } catch (SQLException ex) {
+
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla ejemplar");
+
+        }
+    }
+    }
+    
+        
