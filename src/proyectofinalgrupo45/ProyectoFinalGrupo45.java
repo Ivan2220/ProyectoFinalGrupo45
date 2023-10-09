@@ -62,21 +62,23 @@ public class ProyectoFinalGrupo45 {
 
      //p.devolverLibro(8, 3);
      
-     List<Lector> listaLectoresP = lector1.listarLectoresPrestamo();
+     List<Lector> lista =p.listarLectores();
 //
 //          
-           for (Lector lector : listaLectoresP ) {
+           for (Lector lt : lista ) {
                
-              System.out.println("ID: " + lector.getIdLector());
-              System.out.println("DNI: " + lector.getDni());
-              System.out.println("Nombre: " + lector.getNombre());
-              System.out.println("Domicilio: " + lector.getDomicilio());
-              System.out.println("Telefono: " + lector.getTelefono());
-              System.out.println("Estado: " + lector.isEstado());
-              System.out.println();
+           
+            System.out.println(lt.getNombre());
+            System.out.println();
           }
   
-    }
+
+// Ejemplar ejemplarEncontrado= ejemplar.buscarEjemplar(1);
+//       if(ejemplarEncontrado!=null){
+//        System.out.println("nombre: "+ ejemplarEncontrado.getLibro().getNombre());
+//      
+//    }
+   }
 
 
     }

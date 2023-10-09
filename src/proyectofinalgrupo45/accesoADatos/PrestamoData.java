@@ -11,17 +11,26 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import proyectofinalgrupo45.entidades.Ejemplar;
 import proyectofinalgrupo45.entidades.Lector;
+import proyectofinalgrupo45.entidades.Libros;
 import proyectofinalgrupo45.entidades.Prestamo;
 
 public class PrestamoData {
 
     private Connection con = null;
-    private Lector l;
-    private Ejemplar e;
+    private LectorData l;
+    private EjemplarData ed;
     private Prestamo p;
+    private LibroData ld;
+    private Lector lt;
 
     public PrestamoData() {
+
         p = new Prestamo();
+        ld = new LibroData();
+        l = new LectorData();
+        ed = new EjemplarData();
+        lt = new Lector();
+
         con = Conexion.getConexion();
     }
 
@@ -90,45 +99,62 @@ public class PrestamoData {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla prestamo: " + ex.getMessage());
         }
     }
-    
-     public List<Lector> listarLectoresPrestamo(){
-            
-           
-             String sql = "SELECT l.idLector, l.nombre, l.domicilio, l.telefono "
-                + "FROM prestamo p "
-                + "JOIN lector l ON p.idLector = l.idLector "
-                + "WHERE p.estado = 1" ;
-            
-        ArrayList<Lector> lectores = new ArrayList<>();
-        
-        try {
-            PreparedStatement ps = con.prepareStatement(sql);
-           
-            ResultSet rs = ps.executeQuery();
-            
-            while(rs.next()){
-                
-              Lector lector = new Lector ();  
-              
-              lector.setIdLector(rs.getInt("idLector"));
-              lector.setDni(rs.getInt("dni"));
-              lector.setNombre(rs.getString("nombre"));
-              lector.setDomicilio(rs.getString("domicilio"));
-              lector.setTelefono(rs.getInt("telefono"));
-              lector.setEstado(true);
-              
-              lectores.add(lector);
-              
+
+    public List<Prestamo> listarLectoresYLibros() {
+        String sql = "SELECT l.nombre AS nombre_lector, lb.nombre AS nombre_libro "
+                + "FROM prestamo p JOIN lector l ON p.idLector = l.idLector "
+                + "JOIN ejemplar e ON p.idEjemplar = e.idEjemplar "
+                + "JOIN libro lb ON e.idLibro = lb.idLibro "
+                + "WHERE p.estado = 1;";
+
+        List<Prestamo> prestamos = new ArrayList<>();
+
+        try (PreparedStatement ps = con.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+
+                int ie = rs.getInt("idEjemplar");
+                p.setEjemplar((Ejemplar) ed.buscarEjemplar(ie));
+                int il = rs.getInt("idLector");
+                p.setLector(l.buscarlector(il));
+                p.setEstado(true);
+
+                prestamos.add(p);
+
             }
-            ps.close();
-            
         } catch (SQLException ex) {
-             JOptionPane.showMessageDialog(null, "Error al acceder a las tablas");
+            JOptionPane.showMessageDialog(null, "Error al acceder a las tablas");
+            ex.printStackTrace();
         }
-        
-        return lectores;
+
+        return prestamos;
+    }
+
+    public List<Lector> listarLectores() {
+        String sql = "SELECT l.nombre FROM prestamo p JOIN lector l ON p.idLector = l.idLector "
+                + "WHERE p.estado = 1 and l.estado = 1";
+
+        List<Lector> lector = new ArrayList<>();
+
+        try {
+            
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery(); 
+
+            while (rs.next()) {
+             Lector lec = new Lector();
+                lec.setNombre(rs.getString("nombre"));
+                lec.setEstado(true);
+                lector.add(lt);
+
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a las tablas");
+            ex.printStackTrace();
         }
-        
+
+        return lector;
+    }
+
 }
-
-

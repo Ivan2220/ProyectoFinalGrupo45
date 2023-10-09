@@ -29,7 +29,7 @@ public class Conexion {
 
                     connection = DriverManager.getConnection(URL + DB, USUARIO, PASSWORD);
 
-                     JOptionPane.showMessageDialog(null, "Conectado");
+                     //JOptionPane.showMessageDialog(null, "Conectado");
                 } catch (SQLException ex) {
 
                     JOptionPane.showMessageDialog(null, "Error al cargar los driver");
