@@ -47,47 +47,36 @@ public class ProyectoFinalGrupo45 {
         LectorData lector1 = new LectorData();
         EjemplarData ejemplar = new EjemplarData();
 
-       
 // Lector lc = lector.buscarLector(1);
 // 
 // Ejemplar ej= ejemplar.buscarEjemplar(1);
 //        
 //        Prestamo ptm = new Prestamo(lc, ej, LocalDate.of(2023, 10, 05), LocalDate.of(2023, 10, 07),true);
 //        p.solicitarLibro(ptm);
-
 //   Libros libroEncontrado= l.buscarLibroId(43);
 //       if(libroEncontrado!=null){
 //        System.out.println("nombre "+ libroEncontrado.getNombre());
 //       }
-
-     //p.devolverLibro(8, 3);
-     
-//    // List<Lector> lista =p.listarLectores();
-////
-////          
-//           for (Lector lt : lista ) {
-//               
-//           
-//            System.out.println(lt.getNombre());
-//            System.out.println();
-//          }
-//  
+        //p.devolverLibro(8, 3);
+        
 
 // Ejemplar ejemplarEncontrado= ejemplar.buscarEjemplar(1);
 //       if(ejemplarEncontrado!=null){
 //        System.out.println("nombre: "+ ejemplarEncontrado.getLibro().getNombre());
 //      
 //    }
-Libros lib=l.buscarLibroId(51);
-Ejemplar ej=new Ejemplar( lib, 10, true);
-ejemplar.guardarEjemplar(ej);
-   }
+//Libros lib=l.buscarLibroId(51);
+//Ejemplar ej=new Ejemplar( lib, 10, true);
+//ejemplar.guardarEjemplar(ej);
 
-     
-    
+List<Prestamo> lista = p.listarLectoresYLibros();
 
-
+        for (Prestamo lt : lista) {
+             
+            System.out.println("nombre del lector: "+lt.getLector().getNombre());
+            System.out.println("nombre del libro: "+lt.getEjemplar().getLibro().getNombre());
+            
+        }
     }
 
-
-
+}

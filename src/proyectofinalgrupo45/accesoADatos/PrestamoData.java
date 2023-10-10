@@ -17,18 +17,18 @@ import proyectofinalgrupo45.entidades.Prestamo;
 public class PrestamoData {
 
     private Connection con = null;
-    private LectorData l;
-    private EjemplarData ed;
-    private Prestamo p;
+   // private LectorData l;
+    //private EjemplarData ed;
+   // private Prestamo p;
     private LibroData ld;
     private Lector lt;
 
     public PrestamoData() {
 
-        p = new Prestamo();
+        //p = new Prestamo();
         ld = new LibroData();
-        l = new LectorData();
-        ed = new EjemplarData();
+        //l = new LectorData();
+       // ed = new EjemplarData();
         lt = new Lector();
 
         con = Conexion.getConexion();
@@ -101,52 +101,37 @@ public class PrestamoData {
     }
 
     public List<Prestamo> listarLectoresYLibros() {
-        String sql = "SELECT l.nombre AS nombre_lector, lb.nombre AS nombre_libro "
-                + "FROM prestamo p JOIN lector l ON p.idLector = l.idLector "
-                + "JOIN ejemplar e ON p.idEjemplar = e.idEjemplar "
-                + "JOIN libro lb ON e.idLibro = lb.idLibro "
-                + "WHERE p.estado = 1;";
 
-        List<Prestamo> prestamos = new ArrayList<>();
+        
+     String sql ="SELECT * FROM prestamo WHERE estado = 1 ";
+     
 
-        try (PreparedStatement ps = con.prepareStatement(sql);
-                ResultSet rs = ps.executeQuery()) {
 
-            while (rs.next()) {
-
-                int ie = rs.getInt("idEjemplar");
-                p.setEjemplar((Ejemplar) ed.buscarEjemplar(ie));
-                int il = rs.getInt("idLector");
-                p.setLector(l.buscarlector(il));
-                p.setEstado(true);
-
-                prestamos.add(p);
-
-            }
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a las tablas");
-            ex.printStackTrace();
-        }
-
-        return prestamos;
-    }
-
-    public List<Lector> listarLectores() {
-        String sql = "SELECT l.nombre FROM prestamo p JOIN lector l ON p.idLector = l.idLector "
-                + "WHERE p.estado = 1 and l.estado = 1";
-
-        List<Lector> lector = new ArrayList<>();
+        List<Prestamo> prestamo = new ArrayList<>();
 
         try {
-            
+
             PreparedStatement ps = con.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery(); 
+//            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-             Lector lec = new Lector();
-                lec.setNombre(rs.getString("nombre"));
-                lec.setEstado(true);
-                lector.add(lt);
+                Prestamo pres = new Prestamo();
+                
+                pres.setIdPrestamo(rs.getInt("idPrestamo"));
+               
+                LectorData lec = new LectorData();
+                int il = rs.getInt("idLector");
+                pres.setLector(lec.buscarlector(il));
+                
+                EjemplarData ej = new EjemplarData();
+                int ie = rs.getInt("idEjemplar");
+                pres.setEjemplar((Ejemplar) ej.buscarEjemplar(ie));
+               
+                pres.setFechaInicio(rs.getDate("fechap").toLocalDate());
+                pres.setFechaFin(rs.getDate("fechad").toLocalDate());
+                pres.setEstado(true);
+                prestamo.add(pres);
 
             }
         } catch (SQLException ex) {
@@ -154,7 +139,9 @@ public class PrestamoData {
             ex.printStackTrace();
         }
 
-        return lector;
+        return prestamo;
     }
+    
+    
 
 }
