@@ -1,13 +1,6 @@
 package proyectofinalgrupo45.accesoADatos;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.*;
 import javax.swing.JOptionPane;
 import proyectofinalgrupo45.entidades.Lector;
 
@@ -31,7 +24,7 @@ public class LectorData {
             ps.setString(2, lector.getNombre());
             ps.setString(3, lector.getDomicilio());
             ps.setInt(4, lector.getTelefono());
-            ps.setBoolean(5, lector.isEstado());// ojo no me da la palabra activo
+            ps.setBoolean(5, lector.isEstado());
             ps.executeUpdate();
 
             ResultSet rs = ps.getGeneratedKeys();

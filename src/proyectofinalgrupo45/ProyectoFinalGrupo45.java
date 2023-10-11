@@ -1,6 +1,6 @@
 package proyectofinalgrupo45;
 
-import java.sql.Connection;
+import java.sql.*;
 import java.time.LocalDate;
 import java.util.List;
 import proyectofinalgrupo45.accesoADatos.Conexion;
@@ -19,18 +19,25 @@ public class ProyectoFinalGrupo45 {
 
         Connection con = Conexion.getConexion();
 
-        Libros librito = new Libros(53, 1234569871, "El Señor de los Anillos", "Fantasía", "Editorial STU", "J.R.R. Tolkien", true);
+        PrestamoData p = new PrestamoData();
+        LectorData lector1 = new LectorData();
+        EjemplarData ejemplar = new EjemplarData();
         LibroData l = new LibroData();
 
-        //l.guardarLibro(librito);
-        //l.modificarLibro(librito);
-        // l.eliminarLibro(53);
+// PRUEBAS DE LIBRO ------------------------------------------------------------------------------------------------------------------
+
+//        Libros librito = new Libros(53, 1234569871, "El Señor de los Anillos", "Fantasía", "Editorial STU", "J.R.R. Tolkien", true);
+//        
+//
+//        l.guardarLibro(librito);
+//        l.modificarLibro(librito);
+//        l.eliminarLibro(53);
 //       Libros libroEncontrado= l.buscarLibroPorIsbn(1234567890);
 //       if(libroEncontrado!=null){
 //        System.out.println("nombre: "+ libroEncontrado.getNombre());
 //        System.out.println("tipo: "+ libroEncontrado.getTipo());
 //    }
-// List<Libros> listaDeLibros = l.listarLibros("Dan Brown");
+// List<Libros> listaDeLibros = l.listarLibrosAutor("Dan Brown");
 //
 //          
 //            for (Libros libro : listaDeLibros) {
@@ -43,10 +50,31 @@ public class ProyectoFinalGrupo45 {
 //                System.out.println("Estado: " + libro.isEstado());
 //                System.out.println();
 //            }
-        PrestamoData p = new PrestamoData();
-        LectorData lector1 = new LectorData();
-        EjemplarData ejemplar = new EjemplarData();
+// Libros libroEncontrado= l.buscarLibroId(43);
+//       if(libroEncontrado!=null){
+//        System.out.println("nombre: "+ libroEncontrado.getNombre());
+//        System.out.println("tipo: "+ libroEncontrado.getTipo());
+//    }
 
+//List<Libros> listaDeLibros = l.listarLibros();
+//
+//          
+//            for (Libros libro : listaDeLibros) {
+//                System.out.println("ID: " + libro.getIdLibro());
+//                System.out.println("ISBN: " + libro.getIsbn());
+//                System.out.println("Nombre: " + libro.getNombre());
+//                System.out.println("Tipo: " + libro.getTipo());
+//                System.out.println("Editorial: " + libro.getEditorial());
+//                System.out.println("Autor: " + libro.getAutor());
+//                System.out.println("Estado: " + libro.isEstado());
+//                System.out.println();
+//            }
+
+
+
+//PRUEBAS DE LECTOR----------------------------------------------------------------------------------------
+
+ //Lector lec = new Lector(0, nombre, domicilio, 0, true);
 // Lector lc = lector.buscarLector(1);
 // 
 // Ejemplar ej= ejemplar.buscarEjemplar(1);
@@ -58,8 +86,6 @@ public class ProyectoFinalGrupo45 {
 //        System.out.println("nombre "+ libroEncontrado.getNombre());
 //       }
         //p.devolverLibro(8, 3);
-        
-
 // Ejemplar ejemplarEncontrado= ejemplar.buscarEjemplar(1);
 //       if(ejemplarEncontrado!=null){
 //        System.out.println("nombre: "+ ejemplarEncontrado.getLibro().getNombre());
@@ -68,15 +94,32 @@ public class ProyectoFinalGrupo45 {
 //Libros lib=l.buscarLibroId(51);
 //Ejemplar ej=new Ejemplar( lib, 10, true);
 //ejemplar.guardarEjemplar(ej);
-
-List<Prestamo> lista = p.listarLectoresYLibros();
+//List<Prestamo> lista = p.listarLectoresYLibros();
+//
+//        for (Prestamo lt : lista) {
+//             
+//            System.out.println("nombre del lector: "+lt.getLector().getNombre());
+//            System.out.println("nombre del libro: "+lt.getEjemplar().getLibro().getNombre());
+//            System.out.println();
+//        }
+//List<Prestamo> lista = p.obtenerLectoresPrestamoVencido();
+//
+//        for (Prestamo lt : lista) {
+//             
+//            System.out.println("Lector: "+lt.getLector().getNombre());
+//            System.out.println("Fecha Vto: "+lt.getFechaFin());
+//            System.out.println("---------------------------");
+//            System.out.println();
+//          
+//        }
+        List<Prestamo> lista = p.obtenerLibrosFechaDeterminada(LocalDate.of(2023, 10, 10));
 
         for (Prestamo lt : lista) {
-             
-            System.out.println("nombre del lector: "+lt.getLector().getNombre());
-            System.out.println("nombre del libro: "+lt.getEjemplar().getLibro().getNombre());
-            
+
+            System.out.println("Libro: " + lt.getEjemplar().getLibro().getNombre());
+            System.out.println("---------------------------");
+            System.out.println();
+
         }
     }
-
 }

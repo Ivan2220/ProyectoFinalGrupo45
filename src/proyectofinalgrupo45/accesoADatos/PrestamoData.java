@@ -2,36 +2,22 @@ package proyectofinalgrupo45.accesoADatos;
 
 import java.sql.Connection;
 import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import proyectofinalgrupo45.entidades.Ejemplar;
-import proyectofinalgrupo45.entidades.Lector;
-import proyectofinalgrupo45.entidades.Libros;
 import proyectofinalgrupo45.entidades.Prestamo;
 
 public class PrestamoData {
 
     private Connection con = null;
-   // private LectorData l;
-    //private EjemplarData ed;
-   // private Prestamo p;
-    private LibroData ld;
-    private Lector lt;
 
     public PrestamoData() {
 
-        //p = new Prestamo();
-        ld = new LibroData();
-        //l = new LectorData();
-       // ed = new EjemplarData();
-        lt = new Lector();
-
         con = Conexion.getConexion();
+
     }
 
     public void solicitarLibro(Prestamo p) {
@@ -102,46 +88,113 @@ public class PrestamoData {
 
     public List<Prestamo> listarLectoresYLibros() {
 
-        
-     String sql ="SELECT * FROM prestamo WHERE estado = 1 ";
-     
-
+        String sql = "SELECT * FROM prestamo WHERE estado = 1 ";
 
         List<Prestamo> prestamo = new ArrayList<>();
 
         try {
 
             PreparedStatement ps = con.prepareStatement(sql);
-//            ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                Prestamo pres = new Prestamo();
-                
-                pres.setIdPrestamo(rs.getInt("idPrestamo"));
+
+                Prestamo p = new Prestamo();
+                LectorData l = new LectorData();
+                EjemplarData ed = new EjemplarData();
                
-                LectorData lec = new LectorData();
+                p.setIdPrestamo(rs.getInt("idPrestamo"));
+
                 int il = rs.getInt("idLector");
-                pres.setLector(lec.buscarlector(il));
-                
-                EjemplarData ej = new EjemplarData();
+                p.setLector(l.buscarlector(il));
+
                 int ie = rs.getInt("idEjemplar");
-                pres.setEjemplar((Ejemplar) ej.buscarEjemplar(ie));
-               
-                pres.setFechaInicio(rs.getDate("fechap").toLocalDate());
-                pres.setFechaFin(rs.getDate("fechad").toLocalDate());
-                pres.setEstado(true);
-                prestamo.add(pres);
+                p.setEjemplar((Ejemplar) ed.buscarEjemplar(ie));
+
+                p.setFechaInicio(rs.getDate("fechap").toLocalDate());
+                p.setFechaFin(rs.getDate("fechad").toLocalDate());
+                p.setEstado(true);
+                prestamo.add(p);
 
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a las tablas");
+            JOptionPane.showMessageDialog(null, "Error al acceder a las tabla prestamo " + ex.getMessage());
             ex.printStackTrace();
         }
 
         return prestamo;
     }
     
-    
+    public List<Prestamo> obtenerLectoresPrestamoVencido(){
+        
+        String sql = "SELECT * FROM prestamo WHERE NOW() > fechad AND estado = 1 ";
 
+        List<Prestamo> prestamo = new ArrayList<>();
+
+        try {
+
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                Prestamo p = new Prestamo();
+                LectorData l = new LectorData();
+               
+                p.setIdPrestamo(rs.getInt("idPrestamo"));
+
+                int il = rs.getInt("idLector");
+                p.setLector(l.buscarlector(il));
+
+                p.setFechaInicio(rs.getDate("fechap").toLocalDate());
+                p.setFechaFin(rs.getDate("fechad").toLocalDate());
+                p.setEstado(true);
+                prestamo.add(p);
+
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a las tabla prestamo " + ex.getMessage());
+            ex.printStackTrace();
+        }
+
+        return prestamo;
+    
+        
+        
+    }
+    
+     public List<Prestamo> obtenerLibrosFechaDeterminada(LocalDate f) {
+
+         List<Prestamo> prestamo = new ArrayList<>();
+        String sql = "SELECT * FROM prestamo WHERE fechap = ? ";
+        
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setDate(1, Date.valueOf(f));
+            ResultSet rs = ps.executeQuery();
+            
+             while (rs.next()) {
+
+                Prestamo p = new Prestamo();
+                EjemplarData ed = new EjemplarData();
+               
+                p.setIdPrestamo(rs.getInt("idPrestamo"));
+
+                int ie = rs.getInt("idEjemplar");
+                p.setEjemplar((Ejemplar) ed.buscarEjemplar(ie));
+
+                p.setFechaInicio(rs.getDate("fechap").toLocalDate());
+                p.setFechaFin(rs.getDate("fechad").toLocalDate());
+                p.setEstado(true);
+                prestamo.add(p);
+          
+             }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla prestamo: " + ex.getMessage());
+        }
+        return prestamo;
+     }
+     
 }
+
