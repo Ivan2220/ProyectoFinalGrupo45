@@ -72,11 +72,9 @@ public class ProyectoFinalGrupo45 {
 
 
 
-//PRUEBAS DE LECTOR----------------------------------------------------------------------------------------
+//
 
- //Lector lec = new Lector(0, nombre, domicilio, 0, true);
-// Lector lc = lector.buscarLector(1);
-// 
+ //PRUEBAS DE Prestamo----------------------------------------------------------------------------------------
 // Ejemplar ej= ejemplar.buscarEjemplar(1);
 //        
 //        Prestamo ptm = new Prestamo(lc, ej, LocalDate.of(2023, 10, 05), LocalDate.of(2023, 10, 07),true);
@@ -112,14 +110,45 @@ public class ProyectoFinalGrupo45 {
 //            System.out.println();
 //          
 //        }
-        List<Prestamo> lista = p.obtenerLibrosFechaDeterminada(LocalDate.of(2023, 10, 10));
+//        List<Prestamo> lista = p.obtenerLibrosFechaDeterminada(LocalDate.of(2023, 10, 10));
+//
+//        for (Prestamo lt : lista) {
+//
+//            System.out.println("Libro: " + lt.getEjemplar().getLibro().getNombre());
+//            System.out.println("---------------------------");
+//            System.out.println();
+//
+//        }
+//PRUEBAS DE LECTOR----------------------------------------------------------------------------------------
+//     Lector lec = new Lector(96958147, "Ana", "salta",1138800193, true);
+//       lector1.guardarLector(lec);
+         //lector1.desactivarlector(1);
+         //lector1.activarlector(1);
+          
+ 
+//       Lector lectorEncontrado = lector1.buscarLectorDni(123456789);
+//       if(lectorEncontrado!=null){
+//           
+//        System.out.println("nombre: "+ lectorEncontrado.getNombre());
+//        System.out.println(" Domicilio: "+ lectorEncontrado.getDomicilio());
+//    }
 
-        for (Prestamo lt : lista) {
+//          Lector lec = new Lector( 3,456789123, "Luis González", "Calle Secundaria 789", 5559012, true);
+//          lector1.modificarLector(lec);
+          
+          
+          List<Lector> listaDeLectores = lector1.listarLectores();
+//
+//          
+            for (Lector lector : listaDeLectores) {
+               System.out.println(" IdLector: " + lector.getIdLector());
+               System.out.println(" DNI: " + lector.getDni());
+               System.out.println(" Nombre: " + lector.getNombre());
+               System.out.println(" Domicilio: " + lector.getDomicilio());
+               System.out.println(" telefono: " + lector.getTelefono());
+               System.out.println("Estado: " + lector.isEstado());
 
-            System.out.println("Libro: " + lt.getEjemplar().getLibro().getNombre());
-            System.out.println("---------------------------");
-            System.out.println();
-
-        }
-    }
+           }
+   
+    } 
 }
