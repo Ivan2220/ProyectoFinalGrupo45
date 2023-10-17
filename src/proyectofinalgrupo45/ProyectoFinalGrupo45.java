@@ -99,7 +99,7 @@ public class ProyectoFinalGrupo45 {
 //            System.out.println("nombre del lector: "+lt.getLector().getNombre());
 //            System.out.println("nombre del libro: "+lt.getEjemplar().getLibro().getNombre());
 //            System.out.println();
-//        }
+//       }
 //List<Prestamo> lista = p.obtenerLectoresPrestamoVencido();
 //
 //        for (Prestamo lt : lista) {
@@ -137,18 +137,29 @@ public class ProyectoFinalGrupo45 {
 //          lector1.modificarLector(lec);
           
           
-          List<Lector> listaDeLectores = lector1.listarLectores();
+//          List<Lector> listaDeLectores = lector1.listarLectores();
+////
+////          
+//            for (Lector lector : listaDeLectores) {
+//               System.out.println(" IdLector: " + lector.getIdLector());
+//               System.out.println(" DNI: " + lector.getDni());
+//               System.out.println(" Nombre: " + lector.getNombre());
+//               System.out.println(" Domicilio: " + lector.getDomicilio());
+//               System.out.println(" telefono: " + lector.getTelefono());
+//               System.out.println("Estado: " + lector.isEstado());
 //
-//          
-            for (Lector lector : listaDeLectores) {
-               System.out.println(" IdLector: " + lector.getIdLector());
-               System.out.println(" DNI: " + lector.getDni());
-               System.out.println(" Nombre: " + lector.getNombre());
-               System.out.println(" Domicilio: " + lector.getDomicilio());
-               System.out.println(" telefono: " + lector.getTelefono());
-               System.out.println("Estado: " + lector.isEstado());
+//           }
 
-           }
+List<Ejemplar> listaE = ejemplar.listarEjemplares();
+   
+   for(Ejemplar ej : listaE){
+        
+       System.out.println(" IdEjemplar: " + ej.getIdEjemplar());
+       System.out.println(" IdLibro: " + ej.getLibro().getIdLibro());
+         System.out.println(" cantidad " + ej.getCantidad());
+           System.out.println(" estado " + ej.isEstado());
+       
+   }
    
     } 
 }

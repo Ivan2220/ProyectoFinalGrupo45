@@ -1,7 +1,5 @@
 package proyectofinalgrupo45.accesoADatos;
 
-import java.sql.Connection;
-import java.sql.Date;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
