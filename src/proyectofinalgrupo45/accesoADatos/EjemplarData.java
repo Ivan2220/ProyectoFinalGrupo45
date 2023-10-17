@@ -144,7 +144,7 @@ public class EjemplarData {
     
     public List<Ejemplar> listarEjemplares() {
 
-        String sql = "SELECT * FROM ejemplar WHERE estado = 1 ";
+        String sql = "SELECT * FROM ejemplar e JOIN libro l ON e.idLibro = l.idLibro WHERE e.estado = 1 AND l.estado = 1 ";
 
         ArrayList<Ejemplar> ejemplar = new ArrayList<>();
 
@@ -160,8 +160,8 @@ public class EjemplarData {
 
                 ej.setIdEjemplar(rs.getInt("idEjemplar"));
                  int idL = rs.getInt("idLibro");
-
-                
+                 
+          
                 ej.setLibro(ls.buscarLibroId(idL));
                 ej.setCantidad(rs.getInt("cantidad"));
                 ej.setEstado(true);
