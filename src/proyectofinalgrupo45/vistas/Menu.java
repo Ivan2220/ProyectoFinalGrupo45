@@ -32,15 +32,15 @@ public class Menu extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMLibro = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jMformlibro = new javax.swing.JMenuItem();
         jMejemplar = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        jMformejemplar = new javax.swing.JMenuItem();
         jMprestamo = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMlector = new javax.swing.JMenu();
+        jMformprestamo = new javax.swing.JMenuItem();
+        jMformlector = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMsalir = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        jMformsalir = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -65,44 +65,44 @@ public class Menu extends javax.swing.JFrame {
         jMLibro.setText("Libro ");
         jMLibro.setMaximumSize(new java.awt.Dimension(41, 32767));
 
-        jMenuItem1.setText("Formulario de Libro");
-        jMLibro.add(jMenuItem1);
+        jMformlibro.setText("Formulario de Libro");
+        jMLibro.add(jMformlibro);
 
         jMenuBar1.add(jMLibro);
 
         jMejemplar.setText("Ejemplar");
 
-        jMenuItem2.setText("Formulario de ejemplar ");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        jMformejemplar.setText("Formulario de ejemplar ");
+        jMformejemplar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                jMformejemplarActionPerformed(evt);
             }
         });
-        jMejemplar.add(jMenuItem2);
+        jMejemplar.add(jMformejemplar);
 
         jMenuBar1.add(jMejemplar);
 
         jMprestamo.setText("Prestamo");
 
-        jMenuItem3.setText("Formulario de Prestamo");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jMformprestamo.setText("Formulario de Prestamo");
+        jMformprestamo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                jMformprestamoActionPerformed(evt);
             }
         });
-        jMprestamo.add(jMenuItem3);
+        jMprestamo.add(jMformprestamo);
 
         jMenuBar1.add(jMprestamo);
 
-        jMlector.setText("Lector");
+        jMformlector.setText("Lector");
 
         jMenuItem4.setText("Formulario de Lector");
-        jMlector.add(jMenuItem4);
+        jMformlector.add(jMenuItem4);
 
-        jMenuBar1.add(jMlector);
+        jMenuBar1.add(jMformlector);
 
         jMsalir.setText("Salir");
-        jMsalir.add(jMenuItem5);
+        jMsalir.add(jMformsalir);
 
         jMenuBar1.add(jMsalir);
 
@@ -119,19 +119,19 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(331, 331, 331))
+                .addGap(325, 325, 325))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void jMformejemplarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMformejemplarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_jMformejemplarActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void jMformprestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMformprestamoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_jMformprestamoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,12 +174,12 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMejemplar;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenu jMlector;
+    private javax.swing.JMenuItem jMformejemplar;
+    private javax.swing.JMenu jMformlector;
+    private javax.swing.JMenuItem jMformlibro;
+    private javax.swing.JMenuItem jMformprestamo;
+    private javax.swing.JMenuItem jMformsalir;
     private javax.swing.JMenu jMprestamo;
     private javax.swing.JMenu jMsalir;
     private javax.swing.JRadioButton jRadioButton1;

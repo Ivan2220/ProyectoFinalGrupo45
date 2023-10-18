@@ -26,7 +26,7 @@
             </Property>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+            <MenuItem class="javax.swing.JMenuItem" name="jMformlibro">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Formulario de Libro"/>
               </Properties>
@@ -38,12 +38,12 @@
             <Property name="text" type="java.lang.String" value="Ejemplar"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+            <MenuItem class="javax.swing.JMenuItem" name="jMformejemplar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Formulario de ejemplar "/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMformejemplarActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -53,17 +53,17 @@
             <Property name="text" type="java.lang.String" value="Prestamo"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+            <MenuItem class="javax.swing.JMenuItem" name="jMformprestamo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Formulario de Prestamo"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMformprestamoActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMlector">
+        <Menu class="javax.swing.JMenu" name="jMformlector">
           <Properties>
             <Property name="text" type="java.lang.String" value="Lector"/>
           </Properties>
@@ -80,7 +80,7 @@
             <Property name="text" type="java.lang.String" value="Salir"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
+            <MenuItem class="javax.swing.JMenuItem" name="jMformsalir">
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -118,7 +118,7 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Component id="jDesktopPane1" min="-2" pref="0" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="331" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="325" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
