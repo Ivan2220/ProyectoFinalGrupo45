@@ -5,6 +5,9 @@
  */
 package proyectofinalgrupo45.vistas;
 
+import java.awt.Color;
+import proyectofinalgrupo45.entidades.Libros;
+
 /**
  *
  * @author Sorondo
@@ -29,7 +32,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenu1 = new javax.swing.JMenu();
         jRadioButton1 = new javax.swing.JRadioButton();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMLibro = new javax.swing.JMenu();
         jMformlibro = new javax.swing.JMenuItem();
@@ -48,24 +51,29 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jDesktopPane1.setMaximumSize(new java.awt.Dimension(2047483647, 2147483647));
-        jDesktopPane1.setPreferredSize(new java.awt.Dimension(446, 331));
+        escritorio.setMaximumSize(new java.awt.Dimension(2047483647, 2147483647));
+        escritorio.setPreferredSize(new java.awt.Dimension(446, 331));
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
+        escritorio.setLayout(escritorioLayout);
+        escritorioLayout.setHorizontalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 446, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        escritorioLayout.setVerticalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 336, Short.MAX_VALUE)
         );
 
         jMLibro.setText("Libro ");
         jMLibro.setMaximumSize(new java.awt.Dimension(41, 32767));
 
         jMformlibro.setText("Formulario de Libro");
+        jMformlibro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMformlibroActionPerformed(evt);
+            }
+        });
         jMLibro.add(jMformlibro);
 
         jMenuBar1.add(jMLibro);
@@ -112,14 +120,11 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(325, 325, 325))
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
         );
 
         pack();
@@ -132,6 +137,16 @@ public class Menu extends javax.swing.JFrame {
     private void jMformprestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMformprestamoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMformprestamoActionPerformed
+
+    private void jMformlibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMformlibroActionPerformed
+       escritorio.removeAll();
+        escritorio.repaint();
+        LibroView l = new LibroView();
+        l.setVisible(true);
+        escritorio.add(l);
+        l.getContentPane().setBackground(new Color(68, 167, 132));
+        escritorio.moveToFront(l);
+    }//GEN-LAST:event_jMformlibroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,7 +184,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu jMLibro;
     private javax.swing.JMenu jMejemplar;
     private javax.swing.JMenu jMenu1;

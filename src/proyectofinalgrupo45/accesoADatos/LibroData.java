@@ -172,7 +172,7 @@ public class LibroData {
     
     public List<Libros> listarLibros() {
 
-        String sql = "SELECT * FROM libro WHERE estado = 1 ";
+        String sql = "SELECT * FROM libro ";
 
         ArrayList<Libros> libros = new ArrayList<>();
 
