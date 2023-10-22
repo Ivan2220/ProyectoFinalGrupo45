@@ -93,7 +93,7 @@ public class LectorData {
 
     }
 
-    public Lector buscarlector(int id) {
+    public Lector buscarLector(int id) {
 
         String sql = "SELECT dni, nombre, domicilio, telefono, estado FROM lector WHERE IdLector = ? AND estado = 1";
 

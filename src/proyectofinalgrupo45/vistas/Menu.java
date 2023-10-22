@@ -41,7 +41,7 @@ public class Menu extends javax.swing.JFrame {
         jMprestamo = new javax.swing.JMenu();
         jMformprestamo = new javax.swing.JMenuItem();
         jMformlector = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        jMitemformlector = new javax.swing.JMenuItem();
         jMsalir = new javax.swing.JMenu();
         jMformsalir = new javax.swing.JMenuItem();
 
@@ -104,8 +104,13 @@ public class Menu extends javax.swing.JFrame {
 
         jMformlector.setText("Lector");
 
-        jMenuItem4.setText("Formulario de Lector");
-        jMformlector.add(jMenuItem4);
+        jMitemformlector.setText("Formulario de Lector");
+        jMitemformlector.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMitemformlectorActionPerformed(evt);
+            }
+        });
+        jMformlector.add(jMitemformlector);
 
         jMenuBar1.add(jMformlector);
 
@@ -139,7 +144,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMformprestamoActionPerformed
 
     private void jMformlibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMformlibroActionPerformed
-       escritorio.removeAll();
+        escritorio.removeAll();
         escritorio.repaint();
         LibroView l = new LibroView();
         l.setVisible(true);
@@ -147,6 +152,20 @@ public class Menu extends javax.swing.JFrame {
         l.getContentPane().setBackground(new Color(68, 167, 132));
         escritorio.moveToFront(l);
     }//GEN-LAST:event_jMformlibroActionPerformed
+
+    private void jMitemformlectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMitemformlectorActionPerformed
+        
+        escritorio.removeAll();
+        escritorio.repaint();
+        LectorView lec = new LectorView();
+        lec.setVisible(true);
+        escritorio.add(lec);
+        lec.getContentPane().setBackground(new Color(68, 167, 132));
+        escritorio.moveToFront(lec);
+        
+        
+        
+    }//GEN-LAST:event_jMitemformlectorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,12 +208,12 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMejemplar;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMformejemplar;
     private javax.swing.JMenu jMformlector;
     private javax.swing.JMenuItem jMformlibro;
     private javax.swing.JMenuItem jMformprestamo;
     private javax.swing.JMenuItem jMformsalir;
+    private javax.swing.JMenuItem jMitemformlector;
     private javax.swing.JMenu jMprestamo;
     private javax.swing.JMenu jMsalir;
     private javax.swing.JRadioButton jRadioButton1;

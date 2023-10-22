@@ -71,10 +71,13 @@
             <Property name="text" type="java.lang.String" value="Lector"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
+            <MenuItem class="javax.swing.JMenuItem" name="jMitemformlector">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Formulario de Lector"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMitemformlectorActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
