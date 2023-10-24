@@ -28,6 +28,9 @@ public class LectorView extends javax.swing.JInternalFrame {
             listaLec = lector.listarLectores();
     
             initComponents();
+            comboListarLectores();
+            
+            
     }
 
     /**
@@ -42,15 +45,15 @@ public class LectorView extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLtelef = new javax.swing.JLabel();
         jLestado = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jTdni = new javax.swing.JTextField();
         jTnombre = new javax.swing.JTextField();
         jTdomicilio = new javax.swing.JTextField();
         jTelefono = new javax.swing.JTextField();
-        jRBestado = new javax.swing.JRadioButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jrbEstado = new javax.swing.JRadioButton();
+        jcbLector = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jTidlector = new javax.swing.JTextField();
         JBnuevo = new javax.swing.JButton();
@@ -65,7 +68,7 @@ public class LectorView extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Domicilio");
 
-        jLabel4.setText("Telefono");
+        jLtelef.setText("Telefono");
 
         jLestado.setText("Estado");
 
@@ -83,10 +86,9 @@ public class LectorView extends javax.swing.JInternalFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jcbLector.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jcbLectorActionPerformed(evt);
             }
         });
 
@@ -120,6 +122,11 @@ public class LectorView extends javax.swing.JInternalFrame {
         });
 
         jBsalir.setText("Salir");
+        jBsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBsalirActionPerformed(evt);
+            }
+        });
 
         jBuscar.setText("Buscar");
         jBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +148,7 @@ public class LectorView extends javax.swing.JInternalFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLtelef, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
                                     .addGroup(layout.createSequentialGroup()
@@ -154,7 +161,7 @@ public class LectorView extends javax.swing.JInternalFrame {
                                         .addGap(88, 88, 88)
                                         .addComponent(jLestado, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jRBestado))
+                                        .addComponent(jrbEstado))
                                     .addComponent(jTdomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTdni, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -170,7 +177,7 @@ public class LectorView extends javax.swing.JInternalFrame {
                         .addGap(0, 112, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jcbLector, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jBuscar)
                         .addGap(60, 60, 60))))
@@ -189,11 +196,11 @@ public class LectorView extends javax.swing.JInternalFrame {
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jBuscar)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jcbLector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLestado)
-                            .addComponent(jRBestado))
+                            .addComponent(jrbEstado))
                         .addGap(55, 55, 55))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(123, Short.MAX_VALUE)
@@ -214,7 +221,7 @@ public class LectorView extends javax.swing.JInternalFrame {
                             .addComponent(jTdomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
+                            .addComponent(jLtelef)
                             .addComponent(jTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(42, 42, 42)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -241,26 +248,31 @@ public class LectorView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTidlectorActionPerformed
 
     private void jBguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardarActionPerformed
-        // TODO add your handling code here:
+            guardarModificarLector();
     }//GEN-LAST:event_jBguardarActionPerformed
 
     private void jBeliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarActionPerformed
-            
+           eliminarLector();
         
     }//GEN-LAST:event_jBeliminarActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void jcbLectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbLectorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_jcbLectorActionPerformed
 
     private void jBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBuscarActionPerformed
-              
+             buscarLector();
     }//GEN-LAST:event_jBuscarActionPerformed
 
     private void JBnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBnuevoActionPerformed
         limpiarCampos();
         lectorActual = null;
+        
     }//GEN-LAST:event_JBnuevoActionPerformed
+
+    private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed
+       dispose();
+    }//GEN-LAST:event_jBsalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -269,22 +281,31 @@ public class LectorView extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBguardar;
     private javax.swing.JButton jBsalir;
     private javax.swing.JButton jBuscar;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLestado;
-    private javax.swing.JRadioButton jRBestado;
+    private javax.swing.JLabel jLtelef;
     private javax.swing.JTextField jTdni;
     private javax.swing.JTextField jTdomicilio;
     private javax.swing.JTextField jTelefono;
     private javax.swing.JTextField jTidlector;
     private javax.swing.JTextField jTnombre;
+    private javax.swing.JComboBox<Lector> jcbLector;
+    private javax.swing.JRadioButton jrbEstado;
     // End of variables declaration//GEN-END:variables
 
+    
+    private void comboListarLectores() {
+
+        for (Lector item : listaLec) {
+
+            jcbLector.addItem(item);
+
+        }
+    }
 
  private void limpiarCampos() {
 
@@ -301,7 +322,7 @@ public class LectorView extends javax.swing.JInternalFrame {
 
         if (lectorActual != null) {
 
-            lector.eliminarLector(lectorActual.getIdLector());
+            lector.desactivarlector(lectorActual.getIdLector());
             lectorActual = null;
             limpiarCampos();
         } else {
@@ -311,5 +332,81 @@ public class LectorView extends javax.swing.JInternalFrame {
         }
     }
  
- 
+       private void buscarLector() {
+
+        Lector selec = (Lector) jcbLector.getSelectedItem();
+
+        lectorActual = lector.buscarLector(selec.getIdLector());
+        if (lectorActual != null) {
+
+            jTidlector.setText(lectorActual.getIdLector() + "");
+            jTdni.setText(lectorActual.getDni() + "");
+            jTnombre.setText(lectorActual.getNombre());
+            jTdomicilio.setText(lectorActual.getDomicilio());
+            jTelefono.setText(lectorActual.getTelefono() + "");
+            boolean estado = lectorActual.isEstado();
+            jrbEstado.setSelected(estado);
+
+        }
+       }
+       
+       
+       private void guardarModificarLector() {
+
+        try {
+            int id = Integer.parseInt(jTidlector.getText());
+            
+            int dni = Integer.parseInt(jTdni.getText());
+            String nombre = jTnombre.getText();
+            String domicilio = jTdomicilio.getText();
+            int telefono = Integer.parseInt(jTelefono.getText());
+           
+
+            if (contieneNumeros(nombre) || contieneNumeros(domicilio) ) {
+
+                JOptionPane.showMessageDialog(this, "Solo se pueden ingresar letras");
+                return;
+
+            }
+
+            if (nombre.isEmpty()  || domicilio.isEmpty()) {
+
+                JOptionPane.showMessageDialog(this, "No puede haber campos vacios");
+                return;
+            }
+            boolean estado = jrbEstado.isSelected();
+
+            if (lectorActual == null) {
+
+                lectorActual = new Lector( dni, nombre, domicilio, telefono, estado);
+
+                lector.guardarLector(lectorActual);
+
+            } else {
+
+                lectorActual.setIdLector(id);
+                lectorActual.setDni(dni);
+                lectorActual.setNombre(nombre);
+                lectorActual.setDomicilio(domicilio);
+                lectorActual.setTelefono(telefono);
+                lectorActual.setEstado(estado);
+
+                lector.modificarLector(lectorActual);
+            
+            }
+        } catch (NumberFormatException ex) {
+
+            JOptionPane.showMessageDialog(this, "Debe ingresar un numero valido");
+        }
+    }
+
+        private boolean contieneNumeros(String input) {
+        for (char c : input.toCharArray()) {// Procesa cada carácter individualmente en una cadena.
+            if (Character.isDigit(c)) {//Verifique si es un dígito numérico
+                return true;
+            }
+        }
+        return false;
+    }
+        
 }
