@@ -10,26 +10,29 @@ public class Prestamo {
    private Ejemplar ejemplar;
    private LocalDate fechaInicio;
    private LocalDate fechaFin;
-   private boolean estado;
+   private int retraso;
+   private int diasD;
 
     public Prestamo() {
     }
 
-    public Prestamo(int idPrestamo, Lector lector, Ejemplar ejemplar, LocalDate fechaInicio, LocalDate fechaFin, boolean estado) {
+    public Prestamo(int idPrestamo, Lector lector, Ejemplar ejemplar, LocalDate fechaInicio, LocalDate fechaFin, int retraso, int diasD) {
         this.idPrestamo = idPrestamo;
         this.lector = lector;
         this.ejemplar = ejemplar;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-        this.estado = estado;
+        this.retraso = retraso;
+        this.diasD = diasD;
     }
 
-    public Prestamo(Lector lector, Ejemplar ejemplar, LocalDate fechaInicio, LocalDate fechaFin, boolean estado) {
+    public Prestamo(Lector lector, Ejemplar ejemplar, LocalDate fechaInicio, LocalDate fechaFin, int retraso, int diasD) {
         this.lector = lector;
         this.ejemplar = ejemplar;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-        this.estado = estado;
+        this.retraso = retraso;
+        this.diasD = diasD;
     }
 
     public int getIdPrestamo() {
@@ -72,20 +75,26 @@ public class Prestamo {
         this.fechaFin = fechaFin;
     }
 
-    public boolean isEstado() {
-        return estado;
+    public int getRetraso() {
+        return retraso;
     }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    public void setRetraso(int retraso) {
+        this.retraso = retraso;
+    }
+
+    public int getDiasD() {
+        return diasD;
+    }
+
+    public void setDiasD(int diasD) {
+        this.diasD = diasD;
     }
 
     @Override
     public String toString() {
-        return "Prestamo{" + "idPrestamo=" + idPrestamo + ", lector=" + lector + ", ejemplar=" + ejemplar + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + '}';
+        return "Prestamo{" + "idPrestamo=" + idPrestamo + ", lector=" + lector + ", ejemplar=" + ejemplar + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", retraso=" + retraso + ", diasD=" + diasD + '}';
     }
 
-    
    
-    
 }

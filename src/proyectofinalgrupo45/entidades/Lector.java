@@ -80,7 +80,8 @@ public class Lector {
 
     @Override
     public String toString() {
-        return "Lector{" + "idLector=" + idLector + ", dni=" + dni + ", nombre=" + nombre + ", domicilio=" + domicilio + ", telefono=" + telefono + '}';
+        
+        return "id = " + idLector + ", " + nombre;
     }
     
     
