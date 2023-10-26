@@ -6,7 +6,9 @@
 package proyectofinalgrupo45.vistas;
 
 import java.util.List;
+import javax.swing.JOptionPane;
 import proyectofinalgrupo45.accesoADatos.EjemplarData;
+import proyectofinalgrupo45.accesoADatos.LibroData;
 import proyectofinalgrupo45.entidades.Ejemplar;
 
 /**
@@ -16,6 +18,7 @@ import proyectofinalgrupo45.entidades.Ejemplar;
 public class EjemplarView extends javax.swing.JInternalFrame {
 
         EjemplarData ejemplar;
+        LibroData libro;
         private Ejemplar ejemplarActual = null;
         private List<Ejemplar> listaEjem;
         
@@ -42,7 +45,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTFidcodigo = new javax.swing.JTextField();
+        jTFidejemplar = new javax.swing.JTextField();
         jTFidlibro = new javax.swing.JTextField();
         jTFcantidad = new javax.swing.JTextField();
         jBuscar = new javax.swing.JButton();
@@ -55,7 +58,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Ejemplar");
 
-        jLabel2.setText("IdCodigo");
+        jLabel2.setText("IdEjemplar");
 
         jLabel3.setText("IdLibro");
 
@@ -63,9 +66,9 @@ public class EjemplarView extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Estado");
 
-        jTFidcodigo.addActionListener(new java.awt.event.ActionListener() {
+        jTFidejemplar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFidcodigoActionPerformed(evt);
+                jTFidejemplarActionPerformed(evt);
             }
         });
 
@@ -104,7 +107,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jTFcantidad, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
                                 .addComponent(jTFidlibro)
-                                .addComponent(jTFidcodigo))
+                                .addComponent(jTFidejemplar))
                             .addComponent(jRBestado))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
@@ -137,7 +140,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
                         .addGap(111, 111, 111)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jTFidcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTFidejemplar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
@@ -172,9 +175,9 @@ public class EjemplarView extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jBguardarActionPerformed
 
-    private void jTFidcodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFidcodigoActionPerformed
+    private void jTFidejemplarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFidejemplarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTFidcodigoActionPerformed
+    }//GEN-LAST:event_jTFidejemplarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -190,7 +193,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JRadioButton jRBestado;
     private javax.swing.JTextField jTFcantidad;
-    private javax.swing.JTextField jTFidcodigo;
+    private javax.swing.JTextField jTFidejemplar;
     private javax.swing.JTextField jTFidlibro;
     private javax.swing.JComboBox<String> jcbejemplar;
     // End of variables declaration//GEN-END:variables
@@ -204,5 +207,85 @@ public class EjemplarView extends javax.swing.JInternalFrame {
         }
     }
 
+  private void limpiarCampos() {
 
+        jTFidejemplar.setText("");
+        jTFidlibro.setText("");
+        jTFcantidad.setText("");
+        jRBestado.setText("");
+        
+  }
+  
+  
+  private void eliminarEjemplar() {
+
+        if (ejemplarActual != null) {
+
+           ejemplar.eliminarEjemplar(ejemplarActual.getIdEjemplar());
+            ejemplarActual = null;
+            limpiarCampos();
+        } else {
+
+            JOptionPane.showMessageDialog(this, "No hay un ejemplar seleccionado");
+
+        }
+    }
+  
+   private void buscarEjemplar() {
+
+       Ejemplar selec = (Ejemplar) jcbejemplar.getSelectedItem();
+
+        ejemplarActual = ejemplar.buscarEjemplar(selec.getIdEjemplar());
+        if (ejemplarActual != null) {
+
+            jTFidejemplar.setText(ejemplarActual.getIdEjemplar() + "");
+            jTFidlibro.setText(ejemplarActual.getLibro()+ "");
+            jTFcantidad.setText(ejemplarActual.getCantidad()+ "");
+            boolean estado = ejemplarActual.isEstado();
+            jRBestado.setSelected(estado);
+
+        }
+    }
+   
+   
+   private void guardarModificarEjemplar() {
+         Libro  libro = new LibroData(); 
+          
+        try {
+            int idEjemplar = Integer.parseInt(jTFidejemplar.getText());
+
+            int idLibro = Integer.parseInt(jTFidlibro.getText());
+         
+            int cantidad = Integer.parseInt(jTFcantidad.getText());
+
+           
+
+            if (idEjemplar.isEmpty() || idLibro.isEmpty() || cantidad )  {
+
+                JOptionPane.showMessageDialog(this, "No puede haber campos vacios");
+                return;
+            }
+            boolean estado = jRBestado.isSelected();
+
+            if (ejemplarActual == null) {
+
+                ejemplarActual = new Ejemplar(idEjemplar, libro, cantidad,estado);
+
+                ejemplar.guardarEjemplar(ejemplarActual);
+
+            } else {
+
+                ejemplarActual.setIdEjemplar(idEjemplar);
+                ejemplarActual.setLibro(libro);
+                ejemplarActual.setCantidad(cantidad);
+                ejemplarActual.setEstado(estado);
+
+                ejemplar.modificarEjemplar(ejemplarActual);
+
+            }
+        } catch (NumberFormatException ex) {
+
+            JOptionPane.showMessageDialog(this, "Debe ingresar un numero valido");
+        }
+    }
 }

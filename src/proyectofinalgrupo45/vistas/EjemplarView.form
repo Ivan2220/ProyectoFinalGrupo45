@@ -37,7 +37,7 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jTFcantidad" pref="73" max="32767" attributes="0"/>
                               <Component id="jTFidlibro" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTFidcodigo" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTFidejemplar" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <Component id="jRBestado" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -81,7 +81,7 @@
                       <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTFidcodigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTFidejemplar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -128,7 +128,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="IdCodigo"/>
+        <Property name="text" type="java.lang.String" value="IdEjemplar"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
@@ -146,9 +146,9 @@
         <Property name="text" type="java.lang.String" value="Estado"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTFidcodigo">
+    <Component class="javax.swing.JTextField" name="jTFidejemplar">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTFidcodigoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTFidejemplarActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTFidlibro">
