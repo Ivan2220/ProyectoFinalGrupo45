@@ -130,7 +130,13 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMformejemplarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMformejemplarActionPerformed
-        
+        escritorio.removeAll();
+        escritorio.repaint();
+        EjemplarView p = new EjemplarView();
+        p.setVisible(true);
+        escritorio.add(p);
+        p.getContentPane().setBackground(new Color(68, 167, 132));
+        escritorio.moveToFront(p);
     }//GEN-LAST:event_jMformejemplarActionPerformed
 
     private void jMformprestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMformprestamoActionPerformed
