@@ -10,18 +10,19 @@ import proyectofinalgrupo45.entidades.Libros;
 
 
 public class EjemplarView extends javax.swing.JInternalFrame {
-    
+
+    LibroData libro;
     EjemplarData ejemplar;
     private Ejemplar ejemplarActual = null;
-    private List<Ejemplar> listaEjem;
-
+    private List<Libros> listaL;
+  
     public EjemplarView() {
+        
         ejemplar = new EjemplarData();
-        listaEjem = ejemplar.listarEjemplares();
-       
+        libro = new LibroData();
+        listaL = libro.listarLibros();
         initComponents();
-         
-        comboListarEjemplares();
+        comboListarLibros();
     }
 
    
@@ -31,262 +32,247 @@ public class EjemplarView extends javax.swing.JInternalFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        txtLibro = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        txtEjemplares = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTFidejemplar = new javax.swing.JTextField();
-        jTFidlibro = new javax.swing.JTextField();
-        jTFcantidad = new javax.swing.JTextField();
-        jBuscar = new javax.swing.JButton();
-        jcbejemplar = new javax.swing.JComboBox<>();
-        jBnuevo = new javax.swing.JButton();
-        jBeliminar = new javax.swing.JButton();
-        jBguardar = new javax.swing.JButton();
-        jBsalir = new javax.swing.JButton();
-        jRBestado = new javax.swing.JRadioButton();
+        jrdEstado = new javax.swing.JRadioButton();
+        jbNuevo = new javax.swing.JButton();
+        jbEliminar = new javax.swing.JButton();
+        jbGuardar = new javax.swing.JButton();
+        jbSalir = new javax.swing.JButton();
+        jcbLibros = new javax.swing.JComboBox<>();
+        jbBuscar = new javax.swing.JButton();
 
         jLabel1.setText("Ejemplar");
 
-        jLabel2.setText("IdEjemplar");
+        jLabel2.setText("idLibro:");
 
-        jLabel3.setText("IdLibro");
+        jLabel3.setText("Ejemplares:");
 
-        jLabel4.setText("Cantidad");
+        jLabel5.setText("Estado:");
 
-        jLabel5.setText("Estado");
-
-        jTFidejemplar.addActionListener(new java.awt.event.ActionListener() {
+        jbNuevo.setText("Nuevo");
+        jbNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFidejemplarActionPerformed(evt);
+                jbNuevoActionPerformed(evt);
             }
         });
 
-        jBuscar.setText("Buscar");
-        jBuscar.addActionListener(new java.awt.event.ActionListener() {
+        jbEliminar.setText("Eliminar");
+        jbEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBuscarActionPerformed(evt);
+                jbEliminarActionPerformed(evt);
             }
         });
 
-        jBnuevo.setText("Nuevo");
-
-        jBeliminar.setText("Eliminar");
-        jBeliminar.addActionListener(new java.awt.event.ActionListener() {
+        jbGuardar.setText("Guardar");
+        jbGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBeliminarActionPerformed(evt);
+                jbGuardarActionPerformed(evt);
             }
         });
 
-        jBguardar.setText("Guardar");
-        jBguardar.addActionListener(new java.awt.event.ActionListener() {
+        jbSalir.setText("Salir");
+        jbSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBguardarActionPerformed(evt);
+                jbSalirActionPerformed(evt);
             }
         });
 
-        jBsalir.setText("Salir");
+        jbBuscar.setText("Buscar");
+        jbBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbBuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(48, 48, 48)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTFcantidad, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-                                .addComponent(jTFidlibro)
-                                .addComponent(jTFidejemplar))
-                            .addComponent(jRBestado))
-                        .addContainerGap())
+                        .addGap(167, 167, 167)
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jBnuevo)
-                        .addGap(44, 44, 44)
-                        .addComponent(jBeliminar)
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(jcbejemplar, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jBuscar)
-                                .addContainerGap(52, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(jBguardar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jBsalir)
-                                .addGap(70, 70, 70))))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(213, 213, 213)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(37, 37, 37)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEjemplares, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jrdEstado))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jbNuevo)
+                .addGap(28, 28, 28)
+                .addComponent(jbEliminar)
+                .addGap(30, 30, 30)
+                .addComponent(jbGuardar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
+                .addComponent(jbSalir)
+                .addGap(36, 36, 36))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jcbLibros, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jbBuscar)
+                .addGap(3, 3, 3))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jcbLibros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbBuscar))
+                        .addGap(17, 17, 17)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jTFidejemplar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
+                            .addComponent(txtLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jTFidlibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jTFcantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jRBestado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jcbejemplar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jBuscar))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                            .addComponent(txtEjemplares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(37, 37, 37)
+                        .addComponent(jLabel5))
+                    .addComponent(jrdEstado))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBnuevo)
-                    .addComponent(jBeliminar)
-                    .addComponent(jBguardar)
-                    .addComponent(jBsalir))
-                .addGap(30, 30, 30))
+                    .addComponent(jbNuevo)
+                    .addComponent(jbEliminar)
+                    .addComponent(jbGuardar)
+                    .addComponent(jbSalir))
+                .addGap(24, 24, 24))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardarActionPerformed
-        guardarModificarEjemplar();
-    }//GEN-LAST:event_jBguardarActionPerformed
+    private void jbNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNuevoActionPerformed
+       limpiarCampos();
+       ejemplarActual=null;
+    }//GEN-LAST:event_jbNuevoActionPerformed
 
-    private void jTFidejemplarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFidejemplarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTFidejemplarActionPerformed
-
-    private void jBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBuscarActionPerformed
-        buscarEjemplar();
-    }//GEN-LAST:event_jBuscarActionPerformed
-
-    private void jBeliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarActionPerformed
+    private void jbEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEliminarActionPerformed
         eliminarEjemplar();
-    }//GEN-LAST:event_jBeliminarActionPerformed
+    }//GEN-LAST:event_jbEliminarActionPerformed
+
+    private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
+        guardarModificarEjemplar();
+    }//GEN-LAST:event_jbGuardarActionPerformed
+
+    private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
+       dispose();
+    }//GEN-LAST:event_jbSalirActionPerformed
+
+    private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
+        buscarEjemplar();
+    }//GEN-LAST:event_jbBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBeliminar;
-    private javax.swing.JButton jBguardar;
-    private javax.swing.JButton jBnuevo;
-    private javax.swing.JButton jBsalir;
-    private javax.swing.JButton jBuscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JRadioButton jRBestado;
-    private javax.swing.JTextField jTFcantidad;
-    private javax.swing.JTextField jTFidejemplar;
-    private javax.swing.JTextField jTFidlibro;
-    private javax.swing.JComboBox<Ejemplar> jcbejemplar;
+    private javax.swing.JButton jbBuscar;
+    private javax.swing.JButton jbEliminar;
+    private javax.swing.JButton jbGuardar;
+    private javax.swing.JButton jbNuevo;
+    private javax.swing.JButton jbSalir;
+    private javax.swing.JComboBox<Libros> jcbLibros;
+    private javax.swing.JRadioButton jrdEstado;
+    private javax.swing.JTextField txtEjemplares;
+    private javax.swing.JTextField txtLibro;
     // End of variables declaration//GEN-END:variables
 
-    private void comboListarEjemplares() {
+ private void comboListarLibros() {
 
-        for (Ejemplar item : listaEjem) {
+        for (Libros item : listaL) {
 
-            jcbejemplar.addItem(item);
-
-        }
-    }
-
-    private void limpiarCampos() {
-
-        jTFidejemplar.setText("");
-        jTFidlibro.setText("");
-        jTFcantidad.setText("");
-        jRBestado.setText("");
-
-    }
-
-    private void eliminarEjemplar() {
-
-        if (ejemplarActual != null) {
-
-            ejemplar.eliminarEjemplar(ejemplarActual.getIdEjemplar());
-            ejemplarActual = null;
-            limpiarCampos();
-        } else {
-
-            JOptionPane.showMessageDialog(this, "No hay un ejemplar seleccionado");
+            jcbLibros.addItem(item);
 
         }
     }
 
     private void buscarEjemplar() {
 
-        Ejemplar selec = (Ejemplar) jcbejemplar.getSelectedItem();
+        Libros selec = (Libros) jcbLibros.getSelectedItem();
 
-        ejemplarActual = ejemplar.buscarEjemplar(selec.getIdEjemplar());
+        ejemplarActual = ejemplar.buscarEjemplarPorIdLibro(selec.getIdLibro());
+        
         if (ejemplarActual != null) {
 
-            jTFidejemplar.setText(ejemplarActual.getIdEjemplar() + "");
-            jTFidlibro.setText(ejemplarActual.getLibro() + "");
-            jTFcantidad.setText(ejemplarActual.getCantidad() + "");
+            txtLibro.setText(ejemplarActual.getLibro().getIdLibro() + "");
+            txtEjemplares.setText(ejemplarActual.getCantidad() + "");
             boolean estado = ejemplarActual.isEstado();
-            jRBestado.setSelected(estado);
+            jrdEstado.setSelected(estado);
 
         }
     }
 
     private void guardarModificarEjemplar() {
-        
-       
 
         try {
-            int idEjemplar = Integer.parseInt(jTFidejemplar.getText());
+            int librito = Integer.parseInt(txtLibro.getText());
+            Libros l = libro.buscarLibroId(librito);
+            
+            
+            int ejemplarC = Integer.parseInt(txtEjemplares.getText());
 
-            Ejemplar libro = ejemplar.buscarEjemplar(idEjemplar);
-            Libros libroObj = libro.getLibro();
-
-            int cantidad = Integer.parseInt(jTFcantidad.getText());
-
-           
-            boolean estado = jRBestado.isSelected();
+            boolean estado = jrdEstado.isSelected();
 
             if (ejemplarActual == null) {
 
-                ejemplarActual = new Ejemplar(idEjemplar, libroObj, cantidad, estado);
+                ejemplarActual = new Ejemplar(l, ejemplarC, estado);
 
                 ejemplar.guardarEjemplar(ejemplarActual);
 
             } else {
 
-                ejemplarActual.setIdEjemplar(idEjemplar);
-                ejemplarActual.setLibro(libroObj);
-                ejemplarActual.setCantidad(cantidad);
+                ejemplarActual.setLibro(l);
+                ejemplarActual.setCantidad(ejemplarC);
+                
                 ejemplarActual.setEstado(estado);
 
                 ejemplar.modificarEjemplar(ejemplarActual);
-
             }
+
         } catch (NumberFormatException ex) {
 
             JOptionPane.showMessageDialog(this, "Debe ingresar un numero valido");
+        }
+    }
+    
+    private void limpiarCampos() {
+
+        txtLibro.setText("");
+        txtEjemplares.setText("");
+        jrdEstado.setSelected(false);
+    }
+
+    private void eliminarEjemplar() {
+
+        if (ejemplarActual != null) {
+
+            ejemplar.eliminarEjemplar(ejemplarActual.getLibro().getIdLibro());
+            ejemplarActual = null;
+            limpiarCampos();
+        } else {
+
+            JOptionPane.showMessageDialog(this, "No hay un alumno seleccionado");
+
         }
     }
 }

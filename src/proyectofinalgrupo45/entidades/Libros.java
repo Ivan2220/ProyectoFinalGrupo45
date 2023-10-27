@@ -91,7 +91,7 @@ public class Libros {
     @Override
     public String toString() {
        
-        return nombre + ", " + isbn;
+        return nombre ;
     }
 
 }

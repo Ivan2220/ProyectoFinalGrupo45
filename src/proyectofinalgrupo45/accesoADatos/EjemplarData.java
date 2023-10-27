@@ -58,7 +58,7 @@ public class EjemplarData {
     }
     public void eliminarEjemplar(int id){
             
-            String sql = "UPDATE ejemplar SET estado = 0 WHERE idEjemplar = ?";
+            String sql = "UPDATE ejemplar SET estado = 0 WHERE idLibro = ?";
             
             
         try {
@@ -170,6 +170,40 @@ public class EjemplarData {
 
             }
             ps.close();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla ejemplar");
+        }
+
+        return ejemplar;
+    }
+    
+    public Ejemplar buscarEjemplarPorIdLibro(int id) {
+
+        String sql = "SELECT idLibro, cantidad, estado FROM ejemplar WHERE idLibro = ? AND estado = 1";
+
+        Ejemplar ejemplar = null;
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+
+                ejemplar = new Ejemplar();
+
+                int idL = rs.getInt("idLibro");
+
+                ejemplar.setLibro(l.buscarLibroId(idL));
+               
+                ejemplar.setCantidad(rs.getInt("cantidad"));
+
+                ejemplar.setEstado(true);
+
+            } else {
+
+                JOptionPane.showMessageDialog(null, "No existe ese ejemplar");
+            }
 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla ejemplar");

@@ -21,7 +21,7 @@ public class PrestamoData {
 
     public void solicitarLibro(Prestamo p) {
 
-        String sql = "INSERT INTO prestamo (idLector, idEjemplar, fechap, fechad, retraso,diasD) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO prestamo (idLector, idEjemplar, fechap, fechad, retraso,diasD) VALUES (?, ?, ?, ?, ?, ?)";
         String sql2 = "UPDATE ejemplar SET cantidad = cantidad - 1 WHERE idEjemplar = ?";
        
 
@@ -33,6 +33,7 @@ public class PrestamoData {
             ps.setDate(3, Date.valueOf(p.getFechaInicio()));
             ps.setDate(4, Date.valueOf(p.getFechaFin()));
             ps.setInt(5, p.getRetraso());
+            ps.setInt(6, p.getDiasD());
 
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
