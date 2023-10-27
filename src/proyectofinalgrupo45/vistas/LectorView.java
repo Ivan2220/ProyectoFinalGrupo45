@@ -297,7 +297,7 @@ public class LectorView extends javax.swing.JInternalFrame {
         jTnombre.setText("");
         jTdomicilio.setText("");
         jTelefono.setText("");
-
+        jrbEstado.setSelected(true); // aqui para que por defecto me coloque activo el lector
     }
 
     private void eliminarLector() {
@@ -309,7 +309,7 @@ public class LectorView extends javax.swing.JInternalFrame {
             limpiarCampos();
         } else {
 
-            JOptionPane.showMessageDialog(this, "No hay un alumno seleccionado");
+            JOptionPane.showMessageDialog(this, "No hay un lector seleccionado");
 
         }
     }
