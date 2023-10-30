@@ -237,6 +237,64 @@ public class LibroData {
 
         return libro;
     }
+    
+    public Libros buscarLibroIdNOActivos(int id) {
+
+        String sql = "SELECT idLibro, isbn , nombre, tipo, editorial, autor FROM libro WHERE idLibro = ? AND estado = 0";
+
+        Libros libro = null;
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+
+                libro = new Libros();
+
+                libro.setIdLibro(rs.getInt("idLibro"));
+                libro.setIsbn(rs.getInt("isbn"));
+                libro.setNombre(rs.getString("nombre"));
+                libro.setTipo(rs.getString("tipo"));
+                libro.setEditorial(rs.getString("editorial"));
+                libro.setAutor(rs.getString("autor"));
+                libro.setEstado(false);
+                
+
+            } else {
+
+                JOptionPane.showMessageDialog(null, "No existe ese libro");
+            }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla libro");
+        }
+
+        return libro;
+    }
+    
+     public void activarLibro(String nombre) {
+
+        String sql = "UPDATE libro SET estado = 1 WHERE nombre = ?";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ps.setString(1, nombre);
+
+            int exito = ps.executeUpdate();
+
+            if (exito == 1) {
+
+                JOptionPane.showMessageDialog(null, "Libro Activado");
+
+            }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Libro");
+        }
+
+    }
 
     
     

@@ -29,7 +29,7 @@ public class Menu extends javax.swing.JFrame {
         jMformlector = new javax.swing.JMenu();
         jMitemformlector = new javax.swing.JMenuItem();
         jMsalir = new javax.swing.JMenu();
-        jMformsalir = new javax.swing.JMenuItem();
+        jMSalir = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -44,11 +44,11 @@ public class Menu extends javax.swing.JFrame {
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 446, Short.MAX_VALUE)
+            .addGap(0, 1091, Short.MAX_VALUE)
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 336, Short.MAX_VALUE)
+            .addGap(0, 656, Short.MAX_VALUE)
         );
 
         jMLibro.setText("Libro ");
@@ -109,7 +109,14 @@ public class Menu extends javax.swing.JFrame {
         jMenuBar1.add(jMformlector);
 
         jMsalir.setText("Salir");
-        jMsalir.add(jMformsalir);
+
+        jMSalir.setText("Salir");
+        jMSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMSalirActionPerformed(evt);
+            }
+        });
+        jMsalir.add(jMSalir);
 
         jMenuBar1.add(jMsalir);
 
@@ -119,14 +126,15 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 1091, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMformejemplarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMformejemplarActionPerformed
@@ -184,6 +192,10 @@ public class Menu extends javax.swing.JFrame {
         escritorio.moveToFront(f);
     }//GEN-LAST:event_jmPrestamosVencidosActionPerformed
 
+    private void jMSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_jMSalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -222,6 +234,7 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu jMLibro;
+    private javax.swing.JMenuItem jMSalir;
     private javax.swing.JMenu jMejemplar;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
@@ -229,7 +242,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMformlector;
     private javax.swing.JMenuItem jMformlibro;
     private javax.swing.JMenuItem jMformprestamo;
-    private javax.swing.JMenuItem jMformsalir;
     private javax.swing.JMenuItem jMitemformlector;
     private javax.swing.JMenu jMprestamo;
     private javax.swing.JMenu jMsalir;

@@ -211,6 +211,65 @@ public class EjemplarData {
 
         return ejemplar;
     }
+    
+    public void activarEjemplar(int id) {
+
+        String sql = "UPDATE ejemplar SET estado = 1 WHERE idEjemplar = ?";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ps.setInt(1, id);
+
+            int exito = ps.executeUpdate();
+
+            if (exito == 1) {
+
+                JOptionPane.showMessageDialog(null, "Ejemplar Activado");
+
+            }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Ejemplar");
+        }
+
+    }
+    
+     public List<Ejemplar> listarEjemplaresNoActivos() {
+
+        String sql = "SELECT * FROM ejemplar e JOIN libro l ON e.idLibro = l.idLibro WHERE e.estado = 0 or l.estado = 0 ";
+
+        ArrayList<Ejemplar> ejemplar = new ArrayList<>();
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                Ejemplar ej = new Ejemplar();
+                LibroData ls= new LibroData();
+                
+
+                ej.setIdEjemplar(rs.getInt("idEjemplar"));
+                 int idL = rs.getInt("idLibro");
+                 
+          
+                ej.setLibro(ls.buscarLibroIdNOActivos(idL));
+                ej.setCantidad(rs.getInt("cantidad"));
+                ej.setEstado(false);
+
+                ejemplar.add(ej);
+
+            }
+            ps.close();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla ejemplar");
+        }
+
+        return ejemplar;
+    }
     }
     
         

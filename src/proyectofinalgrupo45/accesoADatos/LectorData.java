@@ -34,7 +34,7 @@ public class LectorData {
             if (rs.next()) {
 
                 lector.setIdLector(rs.getInt(1));
-                JOptionPane.showMessageDialog(null, "Lector Guardado");
+                JOptionPane.showMessageDialog(null, "Usuario Guardado");
 
             }
 
@@ -42,7 +42,7 @@ public class LectorData {
 
         } catch (SQLException ex) {
 
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla alumno");
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Lector");
 
         }
     }
@@ -60,7 +60,7 @@ public class LectorData {
 
             if (exito == 1) {
 
-                JOptionPane.showMessageDialog(null, "Lector Activo");
+                JOptionPane.showMessageDialog(null, "Usuario Activado");
 
             }
 
@@ -83,7 +83,7 @@ public class LectorData {
 
             if (exito == 1) {
 
-                JOptionPane.showMessageDialog(null, "Lector Desactivo");
+                JOptionPane.showMessageDialog(null, "Usuario Desactivado");
 
             }
 
@@ -116,7 +116,7 @@ public class LectorData {
 
             } else {
 
-                JOptionPane.showMessageDialog(null, "No existe ese lector");
+                JOptionPane.showMessageDialog(null, "No existe ese Usuario");
             }
 
         } catch (SQLException ex) {
@@ -152,7 +152,7 @@ public class LectorData {
               
             }else{
                 
-                JOptionPane.showMessageDialog(null, "No existe ese lector");
+                JOptionPane.showMessageDialog(null, "No existe ese Usuario");
             }
             
         } catch (SQLException ex) {
@@ -182,7 +182,7 @@ public class LectorData {
             
             if (exito==1) {
                 
-                JOptionPane.showMessageDialog(null, " Lector Modificado");
+                JOptionPane.showMessageDialog(null, " Usuario Modificado");
                 
             }
             
@@ -211,6 +211,7 @@ public class LectorData {
               lector.setIdLector(rs.getInt("idLector"));
               lector.setDni(rs.getInt("dni"));
               lector.setNombre(rs.getString("nombre"));
+              lector.setDomicilio(rs.getString("domicilio"));
               lector.setTelefono(rs.getInt("telefono"));
               lector.setEstado(true);
              
@@ -226,5 +227,37 @@ public class LectorData {
         return lectores;
         }
         
-    
+     public List<Lector> listarLectoresNoActivos(){
+            
+            String sql = "SELECT idLector, dni, nombre, domicilio, telefono FROM lector WHERE estado = 0";
+       
+        ArrayList<Lector> lectores = new ArrayList<>();
+        
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+           
+            ResultSet rs = ps.executeQuery();
+            
+            while(rs.next()){
+                
+              Lector lector = new Lector ();  
+              
+              lector.setIdLector(rs.getInt("idLector"));
+              lector.setDni(rs.getInt("dni"));
+              lector.setNombre(rs.getString("nombre"));
+              lector.setDomicilio(rs.getString("domicilio"));
+              lector.setTelefono(rs.getInt("telefono"));
+              lector.setEstado(false);
+             
+              lectores.add(lector);
+              
+            }
+            ps.close();
+            
+        } catch (SQLException ex) {
+             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla lector");
+        }
+        
+        return lectores;
+        }
 }

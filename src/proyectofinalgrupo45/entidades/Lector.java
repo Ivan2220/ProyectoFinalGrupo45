@@ -81,7 +81,7 @@ public class Lector {
     @Override
     public String toString() {
         
-        return "id = " + idLector + ", " + nombre;
+        return nombre;
     }
     
     
