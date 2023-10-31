@@ -60,7 +60,7 @@ public class Menu extends javax.swing.JFrame {
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jMLibro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/librospeq.png"))); // NOI18N
@@ -89,7 +89,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMejemplar);
 
-        jMprestamo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/prestamo.png"))); // NOI18N
+        jMprestamo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/prestamoview.png"))); // NOI18N
 
         jMformprestamo.setText("Formulario de Prestamo");
         jMformprestamo.addActionListener(new java.awt.event.ActionListener() {
@@ -146,7 +146,7 @@ public class Menu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 618, Short.MAX_VALUE)
         );
 
         pack();
