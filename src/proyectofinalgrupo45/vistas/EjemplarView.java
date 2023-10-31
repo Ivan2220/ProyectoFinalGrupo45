@@ -55,12 +55,16 @@ public class EjemplarView extends javax.swing.JInternalFrame {
         jtEjemplares = new javax.swing.JTable();
         jbActivar = new javax.swing.JButton();
 
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel1.setText("Ejemplar");
 
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setText("idLibro:");
 
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setText("Ejemplares:");
 
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setText("Estado:");
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 255));
@@ -68,6 +72,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
         jbRegistrar.setBackground(new java.awt.Color(21, 101, 192));
         jbRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbRegistrar.setForeground(new java.awt.Color(255, 255, 255));
+        jbRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/guardar ejemplar.png"))); // NOI18N
         jbRegistrar.setText("Guardar");
         jbRegistrar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jbRegistrar.setBorderPainted(false);
@@ -84,7 +89,8 @@ public class EjemplarView extends javax.swing.JInternalFrame {
         jbEliminar.setBackground(new java.awt.Color(21, 101, 192));
         jbEliminar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbEliminar.setForeground(new java.awt.Color(255, 255, 255));
-        jbEliminar.setText("Eliminar");
+        jbEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/eliminar.png"))); // NOI18N
+        jbEliminar.setText("    Eliminar");
         jbEliminar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jbEliminar.setBorderPainted(false);
         jbEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -100,6 +106,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
         jbNuevo.setBackground(new java.awt.Color(21, 101, 192));
         jbNuevo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbNuevo.setForeground(new java.awt.Color(255, 255, 255));
+        jbNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/nuevoejem.png"))); // NOI18N
         jbNuevo.setText("Nuevo");
         jbNuevo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jbNuevo.setBorderPainted(false);
@@ -116,6 +123,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
         jbSalir.setBackground(new java.awt.Color(21, 101, 192));
         jbSalir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbSalir.setForeground(new java.awt.Color(255, 255, 255));
+        jbSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/salir.png"))); // NOI18N
         jbSalir.setText("Salir");
         jbSalir.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jbSalir.setBorderPainted(false);
@@ -219,7 +227,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(jtEjemplares);
 
         jbActivar.setBackground(new java.awt.Color(102, 255, 51));
-        jbActivar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbActivar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jbActivar.setForeground(new java.awt.Color(255, 255, 255));
         jbActivar.setText("Activar Ejemplar");
         jbActivar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
@@ -247,7 +255,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel3)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(37, 37, 37)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jrdEstado)
@@ -263,7 +271,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(236, 236, 236)
-                                .addComponent(jbActivar, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jbActivar, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -307,7 +315,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jbtActivos, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jbtNoActivos, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jbActivar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
