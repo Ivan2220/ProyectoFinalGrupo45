@@ -54,13 +54,13 @@ public class LectorView extends javax.swing.JInternalFrame {
 
         setBackground(new java.awt.Color(160, 199, 246));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("DNI:");
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setText("Nombre:");
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Domicilio:");
 
         jLtelef.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -69,7 +69,7 @@ public class LectorView extends javax.swing.JInternalFrame {
         jLestado.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLestado.setText("Estado:");
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel6.setText("Registrar un Nuevo Usuario");
 
         txtDNI.addActionListener(new java.awt.event.ActionListener() {
