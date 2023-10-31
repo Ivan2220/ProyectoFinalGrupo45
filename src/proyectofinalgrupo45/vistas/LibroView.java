@@ -103,6 +103,7 @@ public class LibroView extends javax.swing.JInternalFrame {
         jbEliminar1.setBackground(new java.awt.Color(255, 0, 0));
         jbEliminar1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jbEliminar1.setForeground(new java.awt.Color(255, 255, 255));
+        jbEliminar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/eliminar.png"))); // NOI18N
         jbEliminar1.setText("Eliminar");
         jbEliminar1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jbEliminar1.setBorderPainted(false);
@@ -119,6 +120,7 @@ public class LibroView extends javax.swing.JInternalFrame {
         jbBuscar.setBackground(new java.awt.Color(51, 51, 51));
         jbBuscar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jbBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        jbBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/buscar libro.png"))); // NOI18N
         jbBuscar.setText("Buscar Libro");
         jbBuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jbBuscar.setBorderPainted(false);
@@ -135,6 +137,7 @@ public class LibroView extends javax.swing.JInternalFrame {
         jbNuevo.setBackground(new java.awt.Color(51, 51, 51));
         jbNuevo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jbNuevo.setForeground(new java.awt.Color(255, 255, 255));
+        jbNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/nuevoejem.png"))); // NOI18N
         jbNuevo.setText("Nuevo");
         jbNuevo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jbNuevo.setBorderPainted(false);
@@ -151,6 +154,7 @@ public class LibroView extends javax.swing.JInternalFrame {
         jbRegistrar.setBackground(new java.awt.Color(51, 204, 0));
         jbRegistrar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jbRegistrar.setForeground(new java.awt.Color(255, 255, 255));
+        jbRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/guardar ejemplar.png"))); // NOI18N
         jbRegistrar.setText("Guardar");
         jbRegistrar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jbRegistrar.setBorderPainted(false);
@@ -262,14 +266,27 @@ public class LibroView extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jbBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(232, 232, 232)
-                                .addComponent(jbRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jbBuscar)
+                                .addGap(27, 27, 27)
+                                .addComponent(jbNuevo)
+                                .addGap(42, 42, 42)
+                                .addComponent(jbRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jbSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(38, 38, 38))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(14, 14, 14)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(txtAutorlist, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jbtActivos1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(48, 48, 48)
+                                                .addComponent(jbtNoActivos, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(17, 17, 17))
+                                            .addComponent(jLabel8)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(286, 286, 286)
                                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -287,18 +304,7 @@ public class LibroView extends javax.swing.JInternalFrame {
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                 .addComponent(jLabel4)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(txtEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(14, 14, 14)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(txtAutorlist, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jbtActivos1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(48, 48, 48)
-                                                .addComponent(jbtNoActivos, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(17, 17, 17))
-                                            .addComponent(jLabel8))))
+                                                .addComponent(txtEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(image)))
                         .addContainerGap())
@@ -309,24 +315,19 @@ public class LibroView extends javax.swing.JInternalFrame {
                             .addComponent(jLabel2))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(txtIsbn, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jbNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                                 .addComponent(jLabel1)
                                 .addGap(372, 372, 372))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jbEliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(245, 245, 245))))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(txtIsbn, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jbEliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(234, 234, 234))))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(338, 338, 338)
                 .addComponent(jbActivar, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -339,11 +340,11 @@ public class LibroView extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1)
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbEliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jbBuscar)
+                    .addComponent(jbRegistrar)
+                    .addComponent(jbEliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbSalir)
+                    .addComponent(jbNuevo))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(image, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
