@@ -155,7 +155,7 @@ public class Menu extends javax.swing.JFrame {
         EjemplarView p = new EjemplarView();
         p.setVisible(true);
         escritorio.add(p);
-        p.getContentPane().setBackground(new Color(153, 153, 255));
+        p.getContentPane().setBackground(new Color(160, 199, 246));
         escritorio.moveToFront(p);
     }//GEN-LAST:event_jMformejemplarActionPerformed
 
@@ -165,7 +165,7 @@ public class Menu extends javax.swing.JFrame {
         PrestamoView p = new PrestamoView();
         p.setVisible(true);
         escritorio.add(p);
-        p.getContentPane().setBackground(new Color(68, 167, 132));
+        p.getContentPane().setBackground(new Color(160, 199, 246));
         escritorio.moveToFront(p);
     }//GEN-LAST:event_jMformprestamoActionPerformed
 
@@ -175,7 +175,7 @@ public class Menu extends javax.swing.JFrame {
         LibroView l = new LibroView();
         l.setVisible(true);
         escritorio.add(l);
-        l.getContentPane().setBackground(new Color(68, 167, 132));
+        l.getContentPane().setBackground(new Color(160, 199, 246));
         escritorio.moveToFront(l);
     }//GEN-LAST:event_jMformlibroActionPerformed
 
@@ -186,7 +186,7 @@ public class Menu extends javax.swing.JFrame {
         LectorView lec = new LectorView();
         lec.setVisible(true);
         escritorio.add(lec);
-        lec.getContentPane().setBackground(new Color(68, 167, 132));
+        lec.getContentPane().setBackground(new Color(160, 199, 246));
         escritorio.moveToFront(lec);
         
         
@@ -200,7 +200,7 @@ public class Menu extends javax.swing.JFrame {
         FechaVencimientoView f = new FechaVencimientoView();
         f.setVisible(true);
         escritorio.add(f);
-        f.getContentPane().setBackground(new Color(68, 167, 132));
+        f.getContentPane().setBackground(new Color(160, 199, 246));
         escritorio.moveToFront(f);
     }//GEN-LAST:event_jmPrestamosVencidosActionPerformed
 

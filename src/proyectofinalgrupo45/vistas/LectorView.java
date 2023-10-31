@@ -52,6 +52,8 @@ public class LectorView extends javax.swing.JInternalFrame {
         jtUsuarios = new javax.swing.JTable();
         jbActivarUsuario = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(160, 199, 246));
+
         jLabel1.setText("DNI:");
 
         jLabel2.setText("Nombre:");
