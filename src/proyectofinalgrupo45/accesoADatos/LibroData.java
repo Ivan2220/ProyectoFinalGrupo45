@@ -240,7 +240,7 @@ public class LibroData {
     
     public Libros buscarLibroIdNOActivos(int id) {
 
-        String sql = "SELECT idLibro, isbn , nombre, tipo, editorial, autor FROM libro WHERE idLibro = ? AND estado = 0";
+        String sql = "SELECT idLibro, isbn , nombre, tipo, editorial, autor, estado FROM libro WHERE idLibro = ? ";
 
         Libros libro = null;
         try {
@@ -258,7 +258,7 @@ public class LibroData {
                 libro.setTipo(rs.getString("tipo"));
                 libro.setEditorial(rs.getString("editorial"));
                 libro.setAutor(rs.getString("autor"));
-                libro.setEstado(false);
+                libro.setEstado(rs.getBoolean("estado"));
                 
 
             } else {

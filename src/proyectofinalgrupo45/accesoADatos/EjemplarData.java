@@ -237,7 +237,7 @@ public class EjemplarData {
     
      public List<Ejemplar> listarEjemplaresNoActivos() {
 
-        String sql = "SELECT * FROM ejemplar e JOIN libro l ON e.idLibro = l.idLibro WHERE e.estado = 0 or l.estado = 0 ";
+        String sql = "SELECT * FROM ejemplar e JOIN libro l ON e.idLibro = l.idLibro WHERE e.estado = 0 or l.estado = 0  ";
 
         ArrayList<Ejemplar> ejemplar = new ArrayList<>();
 

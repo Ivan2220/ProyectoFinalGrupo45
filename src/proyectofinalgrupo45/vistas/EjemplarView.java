@@ -452,7 +452,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
             limpiarCampos();
         } else {
 
-            JOptionPane.showMessageDialog(this, "No hay un alumno seleccionado");
+            JOptionPane.showMessageDialog(this, "No hay un ejemplar seleccionado");
 
         }
     }
@@ -460,8 +460,8 @@ public class EjemplarView extends javax.swing.JInternalFrame {
 
         ArrayList<Object> filaCabecera = new ArrayList<>();
         filaCabecera.add("ID");
-        filaCabecera.add("IDLibro");
-        filaCabecera.add("Cantidad");
+        filaCabecera.add("Nombre");
+        filaCabecera.add("Ejemplares");
         
 
         for (Object it : filaCabecera) {
