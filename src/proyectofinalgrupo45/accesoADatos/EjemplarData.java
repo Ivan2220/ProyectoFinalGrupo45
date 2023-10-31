@@ -40,7 +40,7 @@ public class EjemplarData {
                 int idL = rs.getInt("idLibro");
 
                 ejemplar.setLibro(l.buscarLibroId(idL));
-               
+
                 ejemplar.setCantidad(rs.getInt("cantidad"));
 
                 ejemplar.setEstado(true);
@@ -56,84 +56,77 @@ public class EjemplarData {
 
         return ejemplar;
     }
-    public void eliminarEjemplar(int id){
-            
-            String sql = "UPDATE ejemplar SET estado = 0 WHERE idLibro = ?";
-            
-            
+
+    public void eliminarEjemplar(int id) {
+
+        String sql = "UPDATE ejemplar SET estado = 0 WHERE idLibro = ?";
+
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            
-            ps.setInt(1,id);
-            
+
+            ps.setInt(1, id);
+
             int exito = ps.executeUpdate();
-            
-            if (exito == 1 ){
-                
-               JOptionPane.showMessageDialog(null, "Ejemplar dado de baja");
-                
-                
+
+            if (exito == 1) {
+
+                JOptionPane.showMessageDialog(null, "Ejemplar dado de baja");
+
             }
-       
-        } catch (SQLException ex) {
-             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla ejemplar");
-        }
-                             
-    }
-    public void modificarEjemplar(Ejemplar ejemplar){
-        
-        
-        String sql = "UPDATE ejemplar SET idLibro= ?, Cantidad= ?,Estado = ? where idEjemplar=?";
-        
-        try {
-            PreparedStatement ps = con.prepareStatement(sql);
-            
-            ps.setInt(1, ejemplar.getLibro().getIdLibro());
-            ps.setInt(2, ejemplar.getCantidad());
-            ps.setBoolean(3, ejemplar.isEstado()); 
-            ps.setInt(4, ejemplar.getIdEjemplar());
-            
-            
-            
-            int exito = ps.executeUpdate();
-            
-            if (exito==1) {
-                
-                JOptionPane.showMessageDialog(null, "Ejemplar Modificado");
-                
-            }
-            
-            
+
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla ejemplar");
         }
-        
+
     }
+
+    public void modificarEjemplar(Ejemplar ejemplar) {
+
+        String sql = "UPDATE ejemplar SET idLibro= ?, cantidad= ?, estado = ? WHERE idLibro = ?";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ps.setInt(1, ejemplar.getLibro().getIdLibro());
+            ps.setInt(2, ejemplar.getCantidad());
+            ps.setBoolean(3, ejemplar.isEstado());
+            ps.setInt(4, ejemplar.getLibro().getIdLibro());
+
+            int exito = ps.executeUpdate();
+
+            if (exito == 1) {
+
+                JOptionPane.showMessageDialog(null, "Ejemplar Modificado");
+
+            }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla ejemplar");
+        }
+
+    }
+
     public void guardarEjemplar(Ejemplar ejemplar) {
 
         String sql = "INSERT INTO ejemplar (idLibro, cantidad, estado)"
                 + "VALUES(?, ?, ?)";
 
-        
-           try {
-               PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-                ps.setInt(1, ejemplar.getLibro().getIdLibro());
-                ps.setInt(2, ejemplar.getCantidad());
-                ps.setBoolean(3, ejemplar.isEstado());
-                ps.executeUpdate();
-                
-                
-                ResultSet rs = ps.getGeneratedKeys();
-                
-                if (rs.next()) {
-                    
-                    ejemplar.setIdEjemplar(rs.getInt(1));
-                    JOptionPane.showMessageDialog(null, "Ejemplar Guardado");
-                    
-               
+        try {
+            PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setInt(1, ejemplar.getLibro().getIdLibro());
+            ps.setInt(2, ejemplar.getCantidad());
+            ps.setBoolean(3, ejemplar.isEstado());
+            ps.executeUpdate();
+
+            ResultSet rs = ps.getGeneratedKeys();
+
+            if (rs.next()) {
+
+                ejemplar.setIdEjemplar(rs.getInt(1));
+                JOptionPane.showMessageDialog(null, "Ejemplar Guardado");
+
             }
-                ps.close();
-            
+            ps.close();
 
         } catch (SQLException ex) {
 
@@ -141,7 +134,7 @@ public class EjemplarData {
 
         }
     }
-    
+
     public List<Ejemplar> listarEjemplares() {
 
         String sql = "SELECT * FROM ejemplar e JOIN libro l ON e.idLibro = l.idLibro WHERE e.estado = 1 AND l.estado = 1 ";
@@ -155,13 +148,11 @@ public class EjemplarData {
             while (rs.next()) {
 
                 Ejemplar ej = new Ejemplar();
-                LibroData ls= new LibroData();
-                
+                LibroData ls = new LibroData();
 
                 ej.setIdEjemplar(rs.getInt("idEjemplar"));
-                 int idL = rs.getInt("idLibro");
-                 
-          
+                int idL = rs.getInt("idLibro");
+
                 ej.setLibro(ls.buscarLibroId(idL));
                 ej.setCantidad(rs.getInt("cantidad"));
                 ej.setEstado(true);
@@ -177,7 +168,7 @@ public class EjemplarData {
 
         return ejemplar;
     }
-    
+
     public Ejemplar buscarEjemplarPorIdLibro(int id) {
 
         String sql = "SELECT idLibro, cantidad, estado FROM ejemplar WHERE idLibro = ? AND estado = 1";
@@ -195,7 +186,7 @@ public class EjemplarData {
                 int idL = rs.getInt("idLibro");
 
                 ejemplar.setLibro(l.buscarLibroId(idL));
-               
+
                 ejemplar.setCantidad(rs.getInt("cantidad"));
 
                 ejemplar.setEstado(true);
@@ -211,7 +202,7 @@ public class EjemplarData {
 
         return ejemplar;
     }
-    
+
     public void activarEjemplar(int id) {
 
         String sql = "UPDATE ejemplar SET estado = 1 WHERE idEjemplar = ?";
@@ -234,8 +225,8 @@ public class EjemplarData {
         }
 
     }
-    
-     public List<Ejemplar> listarEjemplaresNoActivos() {
+
+    public List<Ejemplar> listarEjemplaresNoActivos() {
 
         String sql = "SELECT * FROM ejemplar e JOIN libro l ON e.idLibro = l.idLibro WHERE e.estado = 0 or l.estado = 0  ";
 
@@ -248,13 +239,11 @@ public class EjemplarData {
             while (rs.next()) {
 
                 Ejemplar ej = new Ejemplar();
-                LibroData ls= new LibroData();
-                
+                LibroData ls = new LibroData();
 
                 ej.setIdEjemplar(rs.getInt("idEjemplar"));
-                 int idL = rs.getInt("idLibro");
-                 
-          
+                int idL = rs.getInt("idLibro");
+
                 ej.setLibro(ls.buscarLibroIdNOActivos(idL));
                 ej.setCantidad(rs.getInt("cantidad"));
                 ej.setEstado(false);
@@ -270,6 +259,4 @@ public class EjemplarData {
 
         return ejemplar;
     }
-    }
-    
-        
+}

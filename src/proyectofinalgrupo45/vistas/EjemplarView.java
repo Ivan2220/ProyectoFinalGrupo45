@@ -1,4 +1,3 @@
-
 package proyectofinalgrupo45.vistas;
 
 import java.util.ArrayList;
@@ -10,17 +9,16 @@ import proyectofinalgrupo45.accesoADatos.LibroData;
 import proyectofinalgrupo45.entidades.Ejemplar;
 import proyectofinalgrupo45.entidades.Libros;
 
-
 public class EjemplarView extends javax.swing.JInternalFrame {
 
     LibroData libro;
     EjemplarData ejemplar;
     private Ejemplar ejemplarActual = null;
     private List<Libros> listaL;
-     private DefaultTableModel modelo;
-  
+    private DefaultTableModel modelo;
+
     public EjemplarView() {
-        
+
         ejemplar = new EjemplarData();
         libro = new LibroData();
         listaL = libro.listarLibros();
@@ -30,7 +28,6 @@ public class EjemplarView extends javax.swing.JInternalFrame {
         armarCabecera();
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -386,7 +383,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtLibro;
     // End of variables declaration//GEN-END:variables
 
- private void comboListarLibros() {
+    private void comboListarLibros() {
 
         for (Libros item : listaL) {
 
@@ -400,7 +397,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
         Libros selec = (Libros) jcbLibros.getSelectedItem();
 
         ejemplarActual = ejemplar.buscarEjemplarPorIdLibro(selec.getIdLibro());
-        
+
         if (ejemplarActual != null) {
 
             txtLibro.setText(ejemplarActual.getLibro().getIdLibro() + "");
@@ -416,8 +413,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
         try {
             int librito = Integer.parseInt(txtLibro.getText());
             Libros l = libro.buscarLibroId(librito);
-            
-            
+
             int ejemplarC = Integer.parseInt(txtEjemplares.getText());
 
             boolean estado = jrdEstado.isSelected();
@@ -432,7 +428,6 @@ public class EjemplarView extends javax.swing.JInternalFrame {
 
                 ejemplarActual.setLibro(l);
                 ejemplarActual.setCantidad(ejemplarC);
-                
                 ejemplarActual.setEstado(estado);
 
                 ejemplar.modificarEjemplar(ejemplarActual);
@@ -443,7 +438,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Debe ingresar un numero valido");
         }
     }
-    
+
     private void limpiarCampos() {
 
         txtLibro.setText("");
@@ -464,13 +459,13 @@ public class EjemplarView extends javax.swing.JInternalFrame {
 
         }
     }
-     private void armarCabecera() {
+
+    private void armarCabecera() {
 
         ArrayList<Object> filaCabecera = new ArrayList<>();
         filaCabecera.add("ID");
         filaCabecera.add("Nombre");
         filaCabecera.add("Ejemplares");
-        
 
         for (Object it : filaCabecera) {
 
@@ -489,8 +484,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
             modelo.addRow(new Object[]{
                 e.getIdEjemplar(),
                 e.getLibro().getNombre(),
-                e.getCantidad(),
-                });
+                e.getCantidad(),});
 
         }
     }
@@ -501,10 +495,9 @@ public class EjemplarView extends javax.swing.JInternalFrame {
         for (Ejemplar e : user) {
 
             modelo.addRow(new Object[]{
-               e.getIdEjemplar(),
+                e.getIdEjemplar(),
                 e.getLibro().getNombre(),
-                e.getCantidad(),
-                });
+                e.getCantidad(),});
         }
     }
 
@@ -524,8 +517,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
         if (filaSeleccionada != -1) {
 
             int id = (int) jtEjemplares.getValueAt(filaSeleccionada, 0);
-             String id2 = (String) jtEjemplares.getValueAt(filaSeleccionada, 1);
-            
+            String id2 = (String) jtEjemplares.getValueAt(filaSeleccionada, 1);
 
             ejemplar.activarEjemplar(id);
             libro.activarLibro(id2);
