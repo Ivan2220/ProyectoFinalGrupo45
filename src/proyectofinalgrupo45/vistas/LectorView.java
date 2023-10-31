@@ -211,7 +211,7 @@ public class LectorView extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jbtActivos.setBackground(new java.awt.Color(51, 255, 0));
+        jbtActivos.setBackground(new java.awt.Color(0, 134, 108));
         jbtActivos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbtActivos.setForeground(new java.awt.Color(255, 255, 255));
         jbtActivos.setText("Activos");
@@ -227,7 +227,7 @@ public class LectorView extends javax.swing.JInternalFrame {
             }
         });
 
-        jbtNoActivos.setBackground(new java.awt.Color(255, 0, 0));
+        jbtNoActivos.setBackground(new java.awt.Color(204, 24, 54));
         jbtNoActivos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbtNoActivos.setForeground(new java.awt.Color(255, 255, 255));
         jbtNoActivos.setText("No activos");
@@ -243,6 +243,7 @@ public class LectorView extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setText("Usuario");
 
         jtUsuarios.setModel(new javax.swing.table.DefaultTableModel(
@@ -258,7 +259,7 @@ public class LectorView extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(jtUsuarios);
 
-        jbActivarUsuario.setBackground(new java.awt.Color(102, 255, 51));
+        jbActivarUsuario.setBackground(new java.awt.Color(0, 134, 108));
         jbActivarUsuario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbActivarUsuario.setForeground(new java.awt.Color(255, 255, 255));
         jbActivarUsuario.setText("Activar Usuario");

@@ -178,7 +178,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
             }
         });
 
-        jbtActivos.setBackground(new java.awt.Color(51, 255, 0));
+        jbtActivos.setBackground(new java.awt.Color(0, 134, 108));
         jbtActivos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbtActivos.setForeground(new java.awt.Color(255, 255, 255));
         jbtActivos.setText("Activos");
@@ -194,7 +194,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
             }
         });
 
-        jbtNoActivos.setBackground(new java.awt.Color(255, 0, 0));
+        jbtNoActivos.setBackground(new java.awt.Color(204, 24, 54));
         jbtNoActivos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbtNoActivos.setForeground(new java.awt.Color(255, 255, 255));
         jbtNoActivos.setText("No activos");
@@ -223,7 +223,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(jtEjemplares);
 
-        jbActivar.setBackground(new java.awt.Color(102, 255, 51));
+        jbActivar.setBackground(new java.awt.Color(0, 134, 108));
         jbActivar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jbActivar.setForeground(new java.awt.Color(255, 255, 255));
         jbActivar.setText("Activar Ejemplar");
