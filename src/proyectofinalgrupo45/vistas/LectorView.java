@@ -87,7 +87,8 @@ public class LectorView extends javax.swing.JInternalFrame {
         jbBuscar.setBackground(new java.awt.Color(21, 101, 192));
         jbBuscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbBuscar.setForeground(new java.awt.Color(255, 255, 255));
-        jbBuscar.setText("Buscar Uusario");
+        jbBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/buscar.png"))); // NOI18N
+        jbBuscar.setText("Buscar Usuario");
         jbBuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jbBuscar.setBorderPainted(false);
         jbBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -103,6 +104,7 @@ public class LectorView extends javax.swing.JInternalFrame {
         jbRegistrar.setBackground(new java.awt.Color(21, 101, 192));
         jbRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbRegistrar.setForeground(new java.awt.Color(255, 255, 255));
+        jbRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/registrar.png"))); // NOI18N
         jbRegistrar.setText("Registrar");
         jbRegistrar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jbRegistrar.setBorderPainted(false);
@@ -119,7 +121,8 @@ public class LectorView extends javax.swing.JInternalFrame {
         jbEliminar.setBackground(new java.awt.Color(21, 101, 192));
         jbEliminar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbEliminar.setForeground(new java.awt.Color(255, 255, 255));
-        jbEliminar.setText("Eliminar");
+        jbEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/eliminar.png"))); // NOI18N
+        jbEliminar.setText("    Eliminar");
         jbEliminar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jbEliminar.setBorderPainted(false);
         jbEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -135,7 +138,8 @@ public class LectorView extends javax.swing.JInternalFrame {
         jbNuevo.setBackground(new java.awt.Color(21, 101, 192));
         jbNuevo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbNuevo.setForeground(new java.awt.Color(255, 255, 255));
-        jbNuevo.setText("Nuevo");
+        jbNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/iconnuevo.png"))); // NOI18N
+        jbNuevo.setText("   Nuevo");
         jbNuevo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jbNuevo.setBorderPainted(false);
         jbNuevo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -151,6 +155,7 @@ public class LectorView extends javax.swing.JInternalFrame {
         jbSalir.setBackground(new java.awt.Color(21, 101, 192));
         jbSalir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbSalir.setForeground(new java.awt.Color(255, 255, 255));
+        jbSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/iconsalir_1.png"))); // NOI18N
         jbSalir.setText("Salir");
         jbSalir.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jbSalir.setBorderPainted(false);
