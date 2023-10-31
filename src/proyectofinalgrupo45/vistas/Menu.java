@@ -155,7 +155,7 @@ public class Menu extends javax.swing.JFrame {
         EjemplarView p = new EjemplarView();
         p.setVisible(true);
         escritorio.add(p);
-        p.getContentPane().setBackground(new Color(51, 102, 255));
+        p.getContentPane().setBackground(new Color(153, 153, 255));
         escritorio.moveToFront(p);
     }//GEN-LAST:event_jMformejemplarActionPerformed
 
