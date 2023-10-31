@@ -172,7 +172,7 @@ public class LibroData {
     
     public List<Libros> listarLibros() {
 
-        String sql = "SELECT * FROM libro ";
+        String sql = "SELECT * FROM libro Where estado = 1 ";
 
         ArrayList<Libros> libros = new ArrayList<>();
 
@@ -294,6 +294,40 @@ public class LibroData {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Libro");
         }
 
+    }
+     
+      public List<Libros> listarLibrosNoActivos() {
+
+        String sql = "SELECT * FROM libro Where estado = 0 ";
+
+        ArrayList<Libros> libros = new ArrayList<>();
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                Libros libro = new Libros();
+
+                libro.setIdLibro(rs.getInt("idLibro"));
+                libro.setIsbn(rs.getInt("isbn"));
+                libro.setNombre(rs.getString("nombre"));
+                libro.setTipo(rs.getString("tipo"));
+                libro.setEditorial(rs.getString("editorial"));
+                libro.setAutor(rs.getString("autor"));
+               
+
+                libros.add(libro);
+
+            }
+            ps.close();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla alumno");
+        }
+
+        return libros;
     }
 
     

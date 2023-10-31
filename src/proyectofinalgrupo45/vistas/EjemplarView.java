@@ -68,7 +68,7 @@ public class EjemplarView extends javax.swing.JInternalFrame {
         jbRegistrar.setBackground(new java.awt.Color(21, 101, 192));
         jbRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbRegistrar.setForeground(new java.awt.Color(255, 255, 255));
-        jbRegistrar.setText("Registrar");
+        jbRegistrar.setText("Guardar");
         jbRegistrar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jbRegistrar.setBorderPainted(false);
         jbRegistrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

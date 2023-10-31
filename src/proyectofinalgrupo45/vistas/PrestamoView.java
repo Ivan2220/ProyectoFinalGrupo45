@@ -65,10 +65,13 @@ public class PrestamoView extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel1.setText("Prestamos");
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setText("REGISTROS DE PRESTAMOS");
 
-        title2.setText("Usuarios");
+        title2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        title2.setText("Usuarios:");
 
+        rdLibrosPrestados.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         rdLibrosPrestados.setText("Libros Prestados");
         rdLibrosPrestados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,6 +79,7 @@ public class PrestamoView extends javax.swing.JInternalFrame {
             }
         });
 
+        rdLibrosNoPrestados.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         rdLibrosNoPrestados.setText("Libros no Prestados");
         rdLibrosNoPrestados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,7 +100,7 @@ public class PrestamoView extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(jtLib);
 
-        jbSalir.setBackground(new java.awt.Color(255, 0, 0));
+        jbSalir.setBackground(new java.awt.Color(51, 51, 51));
         jbSalir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbSalir.setForeground(new java.awt.Color(255, 255, 255));
         jbSalir.setText("Salir");
@@ -113,7 +117,7 @@ public class PrestamoView extends javax.swing.JInternalFrame {
         });
 
         jbAnular.setBackground(new java.awt.Color(255, 0, 0));
-        jbAnular.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbAnular.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jbAnular.setForeground(new java.awt.Color(255, 255, 255));
         jbAnular.setText("Anular Prestamo");
         jbAnular.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
@@ -129,7 +133,7 @@ public class PrestamoView extends javax.swing.JInternalFrame {
         });
 
         jbPrestar.setBackground(new java.awt.Color(102, 255, 51));
-        jbPrestar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbPrestar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jbPrestar.setForeground(new java.awt.Color(255, 255, 255));
         jbPrestar.setText("Prestar");
         jbPrestar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
@@ -149,30 +153,31 @@ public class PrestamoView extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jbPrestar, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jbAnular, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
-                .addComponent(jbSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(192, 192, 192)
+                .addContainerGap(36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(title2)
-                    .addComponent(jcbuser, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(title2)
+                            .addComponent(jcbuser, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 745, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jbPrestar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(185, 185, 185)
+                                .addComponent(jbAnular, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(220, 220, 220)
+                                .addComponent(jbSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(33, 33, 33))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(178, 178, 178)
-                .addComponent(rdLibrosPrestados)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(rdLibrosNoPrestados)
-                .addGap(180, 180, 180))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 745, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(183, 183, 183)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(rdLibrosPrestados)
+                        .addGap(76, 76, 76)
+                        .addComponent(rdLibrosNoPrestados))
+                    .addComponent(jLabel1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -180,28 +185,25 @@ public class PrestamoView extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(152, 152, 152)
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel1)
+                        .addGap(70, 70, 70)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rdLibrosPrestados)
                             .addComponent(rdLibrosNoPrestados)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(57, 57, 57)
-                                .addComponent(title2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(jLabel1)))
+                        .addGap(64, 64, 64)
+                        .addComponent(title2)
                         .addGap(18, 18, 18)
                         .addComponent(jcbuser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(34, 34, 34)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addGap(60, 60, 60)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbAnular, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbPrestar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21))
+                    .addComponent(jbAnular, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbPrestar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         pack();
@@ -359,22 +361,22 @@ private void prestarLibro() {
 
             presData.solicitarLibro(prestamo);
             eliminarFilas();
-        } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona un Ejemplar de la lista.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
+        } 
+        }else{
+        JOptionPane.showMessageDialog(this, "Por favor, selecciona un ejemplar de la lista.", "Error", JOptionPane.ERROR_MESSAGE);
     }
 }
 
 private void anularPrestamo(){
     
-     // Obtener la fila seleccionada en la JTable
+     
         int filaSeleccionada = jtLib.getSelectedRow();
 
         if (filaSeleccionada != -1) {
 
            Lector lector = (Lector) jcbuser.getSelectedItem();
 
-            // Obtener el ID de el ejemplar seleccionado en la JTable
+            
             int idEjemplar = (int) jtLib.getValueAt(filaSeleccionada, 0);;
 
             presData.devolverLibro(lector.getIdLector(), idEjemplar);
