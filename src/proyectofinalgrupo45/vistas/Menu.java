@@ -60,10 +60,11 @@ public class Menu extends javax.swing.JFrame {
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 656, Short.MAX_VALUE)
+            .addGap(0, 572, Short.MAX_VALUE)
         );
 
-        jMLibro.setText("Libro ");
+        jMLibro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/librospeq.png"))); // NOI18N
+        jMLibro.setText(" ");
         jMLibro.setMaximumSize(new java.awt.Dimension(41, 32767));
 
         jMformlibro.setText("Formulario de Libro");
@@ -76,7 +77,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMLibro);
 
-        jMejemplar.setText("Ejemplar");
+        jMejemplar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/ejemplar.png"))); // NOI18N
 
         jMformejemplar.setText("Formulario de ejemplar ");
         jMformejemplar.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +89,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMejemplar);
 
-        jMprestamo.setText("Prestamo");
+        jMprestamo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/prestamo.png"))); // NOI18N
 
         jMformprestamo.setText("Formulario de Prestamo");
         jMformprestamo.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +109,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMprestamo);
 
-        jMformlector.setText("Lector");
+        jMformlector.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/lector.png"))); // NOI18N
 
         jMitemformlector.setText("Formulario de Lector");
         jMitemformlector.addActionListener(new java.awt.event.ActionListener() {
@@ -120,7 +121,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMformlector);
 
-        jMsalir.setText("Salir");
+        jMsalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/salir.png"))); // NOI18N
 
         jMSalir.setText("Salir");
         jMSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -142,7 +143,7 @@ public class Menu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE)
         );
 
         pack();
