@@ -167,6 +167,7 @@ public class LibroView extends javax.swing.JInternalFrame {
         jbSalir.setBackground(new java.awt.Color(51, 51, 51));
         jbSalir.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jbSalir.setForeground(new java.awt.Color(255, 255, 255));
+        jbSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/salir.png"))); // NOI18N
         jbSalir.setText("Salir");
         jbSalir.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jbSalir.setBorderPainted(false);
@@ -265,8 +266,8 @@ public class LibroView extends javax.swing.JInternalFrame {
                                 .addGap(232, 232, 232)
                                 .addComponent(jbRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jbSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(78, 78, 78))
+                                .addComponent(jbSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(38, 38, 38))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
