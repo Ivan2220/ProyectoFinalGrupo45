@@ -4,10 +4,15 @@ package proyectofinalgrupo45.vistas;
 import java.awt.Color;
 import proyectofinalgrupo45.entidades.Libros;
 
+import javax.swing.ImageIcon;
+import java.awt.Image;
+import java.awt.Graphics;
 public class Menu extends javax.swing.JFrame {
 
     public Menu() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setSize(500, 520);
     }
 
    
@@ -17,7 +22,14 @@ public class Menu extends javax.swing.JFrame {
 
         jMenu1 = new javax.swing.JMenu();
         jRadioButton1 = new javax.swing.JRadioButton();
-        escritorio = new javax.swing.JDesktopPane();
+        ImageIcon icon = new ImageIcon(getClass().getResource("/proyectofinalgrupo45/Recursos/sistemabiblioteca.jpg "));
+        Image miImagen = icon.getImage();
+        escritorio = new javax.swing.JDesktopPane(){
+            public void paintComponent (Graphics g){
+                super.paintComponent(g);
+                g.drawImage(miImagen,0,0,getWidth(),getHeight(),this);
+            }
+        };
         jMenuBar1 = new javax.swing.JMenuBar();
         jMLibro = new javax.swing.JMenu();
         jMformlibro = new javax.swing.JMenuItem();
